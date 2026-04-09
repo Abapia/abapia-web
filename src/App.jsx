@@ -9,6 +9,7 @@ function App() {
 
           <nav className="header-nav">
             <a href="#servicios">Servicios</a>
+            <a href="#paquetes">Paquetes</a>
             <a href="#porque-abapia">Por qué ABAPIA</a>
             <a href="#metodo">Cómo trabajamos</a>
             <a href="#ideal-para">Ideal para</a>
@@ -92,6 +93,50 @@ function App() {
                   soporte continuo y demanda variable.
                 </p>
                 <div className="card-tag">Ideal para consultoras y equipos chicos</div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-alt" id="paquetes">
+          <div className="container">
+            <div className="section-heading">
+              <span className="eyebrow">Paquetes</span>
+              <h2>Tres formas simples de trabajar con ABAPIA</h2>
+              <p>
+                Elegimos la modalidad según el tipo de necesidad, el ritmo del
+                cliente y el nivel de acompañamiento que haga falta.
+              </p>
+            </div>
+
+            <div className="cards-grid">
+              <article className="card">
+                <h3>ABAPIA Sprint</h3>
+                <p>
+                  Ideal para resolver un requerimiento puntual y conocer nuestra
+                  forma de trabajo. Incluye relevamiento breve, alcance acotado,
+                  desarrollo o ajuste técnico, prueba básica y entrega para
+                  validación.
+                </p>
+              </article>
+
+              <article className="card">
+                <h3>ABAPIA Delivery</h3>
+                <p>
+                  Pensado para cuando ya hay un desarrollo ABAP concreto para
+                  ejecutar. Incluye análisis técnico, estimación, desarrollo,
+                  pruebas técnicas, ajustes razonables dentro del alcance y
+                  entrega lista para validar.
+                </p>
+              </article>
+
+              <article className="card">
+                <h3>ABAPIA Partner</h3>
+                <p>
+                  Una bolsa mensual de horas para acompañar backlog, tickets,
+                  ajustes y mejoras de manera continua. Es la opción más flexible
+                  para sumar capacidad técnica sin incorporar estructura fija.
+                </p>
               </article>
             </div>
           </div>
