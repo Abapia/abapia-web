@@ -10,10 +10,11 @@ function App() {
           <nav className="header-nav">
             <a href="#servicios">Servicios</a>
             <a href="#paquetes">Paquetes</a>
+            <a href="#nosotros">Nosotros</a>
             <a href="#porque-abapia">Por qué ABAPIA</a>
             <a href="#metodo">Cómo trabajamos</a>
             <a href="#ideal-para">Ideal para</a>
-            <a href="#talento">Talento</a>
+            <a href="#faq">FAQ</a>
             <a href="#contacto">Contacto</a>
           </nav>
 
@@ -68,31 +69,42 @@ function App() {
             </div>
 
             <div className="cards-grid">
-              <article className="card">
-                <h3>Desarrollo ABAP bajo demanda</h3>
-                <p>
-                  Reportes, ALV, interfaces, formularios, programas Z, mejoras,
-                  BADIs, exits y ajustes técnicos puntuales.
-                </p>
-                <div className="card-tag">Ideal para requerimientos puntuales</div>
+              <article className="card service-card service-card-featured">
+                <div className="service-card-body">
+                  <h3>Desarrollo ABAP bajo demanda</h3>
+                  <p>
+                    Desarrollos ABAP a medida para resolver necesidades técnicas puntuales.
+                  </p>
+                </div>
+                <div className="service-card-footer">
+                  <div className="card-tag">Ideal para requerimientos puntuales</div>
+                </div>
               </article>
 
-              <article className="card">
-                <h3>Soporte evolutivo y correctivo</h3>
-                <p>
-                  Resolución de tickets, corrección de errores, mejoras sobre
-                  desarrollos existentes y optimización técnica.
-                </p>
-                <div className="card-tag">Ideal para backlog y soporte continuo</div>
+              <article className="card service-card">
+                <div className="service-card-body">
+                  <h3>Soporte evolutivo y correctivo</h3>
+                  <p>
+                    Resolución de tickets, corrección de errores, mejoras sobre
+                    desarrollos existentes y optimización técnica.
+                  </p>
+                </div>
+                <div className="service-card-footer">
+                  <div className="card-tag">Ideal para backlog y soporte continuo</div>
+                </div>
               </article>
 
-              <article className="card">
-                <h3>Bolsa mensual ABAP</h3>
-                <p>
-                  Capacidad técnica reservada por mes para acompañar backlog,
-                  soporte continuo y demanda variable.
-                </p>
-                <div className="card-tag">Ideal para consultoras y equipos chicos</div>
+              <article className="card service-card">
+                <div className="service-card-body">
+                  <h3>Bolsa mensual ABAP</h3>
+                  <p>
+                    Capacidad técnica reservada por mes para acompañar backlog,
+                    soporte continuo y demanda variable.
+                  </p>
+                </div>
+                <div className="service-card-footer">
+                  <div className="card-tag">Ideal para consultoras y equipos chicos</div>
+                </div>
               </article>
             </div>
           </div>
@@ -138,6 +150,57 @@ function App() {
                   para sumar capacidad técnica sin incorporar estructura fija.
                 </p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-divider" id="nosotros">
+          <div className="container">
+            <div className="about-box">
+              <div className="about-intro">
+                <span className="eyebrow">Nosotros</span>
+                <h2>Experiencia real en SAP ABAP. IA aplicada con criterio.</h2>
+              </div>
+
+              <div className="about-content">
+                <p>
+                  La eficiencia también debería beneficiar al cliente.
+                </p>
+
+                <p>
+                  En ABAPIA tenemos más de 20 años de experiencia en desarrollo
+                  SAP ABAP y conocemos de cerca cómo se estiman, ejecutan y
+                  entregan los desarrollos dentro del mundo de las consultoras.
+                </p>
+
+                <p>
+                  La inteligencia artificial cambió la forma de trabajar. Hoy
+                  permite acelerar tareas técnicas, reducir tiempos operativos y
+                  mejorar la ejecución sin resignar calidad.
+                </p>
+
+                <p>
+                  Creemos que esa mejora no debería quedar solo del lado del
+                  proveedor. También debería traducirse en estimaciones más
+                  razonables, mayor transparencia y una relación más sana con el
+                  cliente.
+                </p>
+
+                <p>
+                  Por eso usamos IA como acelerador técnico, siempre con
+                  validación humana experta, para entregar con más velocidad,
+                  más claridad y más honestidad.
+                </p>
+
+                <p>
+                  Nuestro objetivo no es vender horas de más. Es resolver bien,
+                  cobrar lo justo y construir relaciones de largo plazo.
+                </p>
+
+                <div className="about-highlight">
+                  Más velocidad para ejecutar. Más claridad para el cliente.
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -287,29 +350,62 @@ function App() {
           </div>
         </section>
 
-        <section className="section section-divider" id="talento">
+        <section className="section section-alt" id="faq">
           <div className="container">
             <div className="section-heading">
-              <span className="eyebrow">Talento</span>
-              <h2>¿Querés trabajar con nosotros?</h2>
+              <span className="eyebrow">FAQ</span>
+              <h2>Preguntas frecuentes</h2>
               <p>
-                Si sos desarrollador ABAP y te interesa trabajar con foco en
-                eficiencia, calidad técnica y uso inteligente de IA, mandanos tu CV.
+                Respuestas rápidas para entender cómo trabajamos y en qué casos
+                puede ayudarte ABAPIA.
               </p>
             </div>
 
-            <div className="career-box">
-              <div className="career-text">
-                <h3>Envíanos tu perfil</h3>
+            <div className="faq-list">
+              <article className="faq-item">
+                <h3>¿Qué tipo de desarrollos puede tomar ABAPIA?</h3>
                 <p>
-                  Buscamos perfiles técnicos con ganas de construir una forma más
-                  ágil, moderna y transparente de desarrollar en SAP.
+                  ABAPIA puede acompañar desarrollos ABAP puntuales, ajustes sobre
+                  soluciones existentes, tickets técnicos, backlog y mejoras
+                  evolutivas.
                 </p>
-              </div>
+              </article>
 
-              <a href="mailto:cv@abapia.com" className="btn btn-primary btn-fixed">
-                Envianos tu CV a cv@abapia.com
-              </a>
+              <article className="faq-item">
+                <h3>¿Trabajan por requerimiento puntual o también de forma continua?</h3>
+                <p>
+                  Ambas opciones. Podemos trabajar con una necesidad puntual a
+                  través de Sprint o Delivery, o acompañar de forma continua con
+                  la modalidad Partner.
+                </p>
+              </article>
+
+              <article className="faq-item">
+                <h3>¿Pueden acompañar backlog, tickets y soporte técnico?</h3>
+                <p>
+                  Sí. Una de las formas más habituales de trabajo es justamente
+                  ayudar a destrabar pendientes, resolver tickets y sumar
+                  capacidad técnica sin agrandar estructura fija.
+                </p>
+              </article>
+
+              <article className="faq-item">
+                <h3>¿Cómo es el arranque de un nuevo trabajo?</h3>
+                <p>
+                  Empezamos con un relevamiento breve para entender la necesidad,
+                  el alcance y el contexto técnico. A partir de eso definimos la
+                  mejor modalidad de trabajo y el siguiente paso.
+                </p>
+              </article>
+
+              <article className="faq-item">
+                <h3>¿Es necesario tener el alcance completamente cerrado?</h3>
+                <p>
+                  No siempre. Si el requerimiento todavía necesita orden, podemos
+                  ayudarte a bajarlo a una propuesta más clara antes de avanzar
+                  con la ejecución.
+                </p>
+              </article>
             </div>
           </div>
         </section>
@@ -325,18 +421,40 @@ function App() {
               </p>
             </div>
 
-            <div className="contact-box">
-              <div className="contact-text">
-                <h3>ABAPIA</h3>
-                <p>Desarrollo ABAP acelerado por IA</p>
+            <div className="contact-stack">
+              <div className="contact-box">
+                <div className="contact-text">
+                  <h3>ABAPIA</h3>
+                  <p>Desarrollo ABAP acelerado por IA</p>
+                </div>
+
+                <div className="contact-actions">
+                  <a href="mailto:contacto@abapia.com" className="btn btn-primary btn-fixed">
+                    Escribinos a contacto@abapia.com
+                  </a>
+                </div>
               </div>
 
-              <div className="contact-actions">
-                <a href="mailto:contacto@abapia.com" className="btn btn-primary btn-fixed">
-                  Escribinos a contacto@abapia.com
+              <div className="contact-secondary-heading">
+                <h3>¿Querés trabajar con nosotros?</h3>
+                <p>
+                  Si sos desarrollador ABAP y te interesa trabajar con foco en
+                  eficiencia, calidad técnica y uso inteligente de IA, mandanos tu CV.
+                </p>
+              </div>
+
+              <div className="career-box">
+                <div className="career-text">
+                  <h3>Envíanos tu perfil</h3>
+                  <p>
+                    Buscamos perfiles técnicos con ganas de construir una forma más
+                    ágil, moderna y transparente de desarrollar en SAP.
+                  </p>
+                </div>
+
+                <a href="mailto:cv@abapia.com" className="btn btn-primary btn-fixed">
+                  Envianos tu CV a cv@abapia.com
                 </a>
-
-
               </div>
             </div>
           </div>
