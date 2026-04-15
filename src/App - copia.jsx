@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 function App() {
   return (
     <>
@@ -27,7 +28,11 @@ function App() {
       <main id="top">
         <section className="hero">
           <div className="container hero-center">
-            <img src="/logo-abapia.png" alt="ABAPIA" className="hero-logo" />
+            <img
+              src="/logo-abapia.png"
+              alt="ABAPIA"
+              className="hero-logo"
+            />
 
             <p className="hero-subtitle">Desarrollo ABAP acelerado por IA</p>
 
@@ -159,7 +164,9 @@ function App() {
               </div>
 
               <div className="about-content">
-                <p>La eficiencia también debería beneficiar al cliente.</p>
+                <p>
+                  La eficiencia también debería beneficiar al cliente.
+                </p>
 
                 <p>
                   En ABAPIA tenemos más de 20 años de experiencia en desarrollo
@@ -251,7 +258,9 @@ function App() {
             <div className="section-heading">
               <span className="eyebrow">Cómo trabajamos</span>
               <h2>Un proceso simple, claro y eficiente</h2>
-              <p>Orden, velocidad y criterio técnico para avanzar sin vueltas.</p>
+              <p>
+                Orden, velocidad y criterio técnico para avanzar sin vueltas.
+              </p>
             </div>
 
             <div className="steps-grid">
@@ -451,31 +460,32 @@ function App() {
             </div>
           </div>
         </section>
-      </main>
 
-      <footer className="site-footer">
-        <div className="container footer-inner">
-          <div className="footer-content">
-            <p>© 2026 ABAPIA. Desarrollo ABAP acelerado por IA.</p>
+        <footer className="site-footer">
+          <div className="container footer-inner">
+            <div className="footer-content">
+              <p>© 2026 ABAPIA. Desarrollo ABAP acelerado por IA.</p>
 
-            <a
-              href="https://www.linkedin.com/company/abapia/"
-              target="_blank"
-              rel="noreferrer"
-              className="footer-linkedin"
-            >
-              <span className="contact-link-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.96 1.96 0 0 0 3.3 4.95 1.95 1.95 0 0 0 5.23 6.9h.02a1.95 1.95 0 1 0 0-3.9ZM20.7 12.83c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.62c.04.74 0 11.5 0 11.5H13v-6.42c0-.34.02-.68.12-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.88 1.02 1.88 2.52V20h3.38v-7.17Z" />
-                </svg>
-              </span>
-              <span>LinkedIn</span>
-            </a>
+              <a
+                href="https://www.linkedin.com/company/abapia/"
+                target="_blank"
+                rel="noreferrer"
+                className="footer-linkedin"
+              >
+                <span className="contact-link-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.96 1.96 0 0 0 3.3 4.95 1.95 1.95 0 0 0 5.23 6.9h.02a1.95 1.95 0 1 0 0-3.9ZM20.7 12.83c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.62c.04.74 0 11.5 0 11.5H13v-6.42c0-.34.02-.68.12-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.88 1.02 1.88 2.52V20h3.38v-7.17Z" />
+                  </svg>
+                </span>
+                <span>LinkedIn</span>
+              </a>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </main>
+      <Analytics />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
