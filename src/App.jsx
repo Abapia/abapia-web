@@ -44,7 +44,6 @@ function App() {
             <a href="#servicios">Servicios</a>
             <a href="#modalidades">Modalidades</a>
             <a href="#nosotros">Nosotros</a>
-            <a href="#porque-abapia">Por qué ABAPIA</a>
             <a href="#metodo">Cómo trabajamos</a>
             <a href="#ideal-para">Ideal para</a>
             <a href="#faq">FAQ</a>
@@ -62,12 +61,18 @@ function App() {
           <div className="container hero-center">
             <img src="/logo-abapia.png" alt="ABAPIA" className="hero-logo" />
 
-            <p className="hero-subtitle">Desarrollo ABAP acelerado por IA</p>
+            <span className="hero-kicker">Desarrollo SAP ABAP con IA</span>
+
+            <p className="hero-subtitle">
+              La IA ya hace tu desarrollo en la mitad del tiempo. ¿Por qué seguís
+              pagando el doble?
+            </p>
 
             <p className="hero-description">
-              Sumá capacidad técnica a tu equipo SAP para resolver desarrollos,
-              tickets y mejoras más rápido. IA para acelerar, validación humana
-              experta para garantizar la calidad, y precio justo sin horas de más.
+              Usamos IA para entregar tus desarrollos SAP ABAP en una fracción del
+              tiempo — y ese ahorro es tuyo. Pagás por el trabajo real, no por
+              horas infladas. Seas una empresa con SAP o una consultora que
+              terceriza.
             </p>
 
             <div className="hero-actions">
@@ -106,6 +111,37 @@ function App() {
               <div className="trust-item">
                 <span className="trust-value">IA + humano</span>
                 <span className="trust-label">validación experta en cada entrega</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="manifiesto">
+          <div className="container">
+            <div className="manifesto">
+              <span className="eyebrow">La eficiencia de la IA, de tu lado</span>
+              <h2>El modelo viejo se rompió. Nosotros ya trabajamos con el nuevo.</h2>
+              <p>
+                La IA redujo drásticamente los tiempos de desarrollo en SAP. Casi
+                todos la usan… pero te siguen facturando como si nada hubiera
+                cambiado. Y pasa en toda la cadena: cuando una consultora terceriza
+                un desarrollo, muchas veces el ABAP acelera con IA y factura horas
+                de más — y ese sobrecosto termina en el cliente.
+              </p>
+              <p>
+                En ABAPIA cortamos con eso. La IA nos hace más rápidos y ese ahorro
+                lo trasladamos: <strong>no inflamos horas, ni a una empresa ni a
+                una consultora.</strong> Entregás antes y pagás por el trabajo
+                real, con validación humana experta que garantiza la calidad.
+              </p>
+              <p>
+                La IA no reemplaza al programador senior: lo potencia. Te quedás
+                con la velocidad y con el criterio.
+              </p>
+              <div className="manifesto-points">
+                <span>Entregás antes</span>
+                <span>Pagás lo real</span>
+                <span>Calidad garantizada por seniors</span>
               </div>
             </div>
           </div>
@@ -296,46 +332,6 @@ function App() {
                   Más velocidad para ejecutar. Más claridad para el cliente.
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section section-divider" id="porque-abapia">
-          <div className="container">
-            <div className="section-heading">
-              <span className="eyebrow">Por qué ABAPIA</span>
-              <h2>Una forma más ágil y confiable de resolver tu SAP</h2>
-              <p>
-                Combinamos la flexibilidad de una estructura liviana con el
-                criterio y la confiabilidad de un servicio profesional.
-              </p>
-            </div>
-
-            <div className="benefits-grid">
-              <article className="benefit-card">
-                <h3>Más que un freelance</h3>
-                <p>
-                  Somos un equipo con estructura, orden y continuidad: no dependés
-                  de una sola persona.
-                </p>
-              </article>
-
-              <article className="benefit-card">
-                <h3>Más ágil que una consultora tradicional</h3>
-                <p>Respuesta rápida, cercanía y menos fricción operativa.</p>
-              </article>
-
-              <article className="benefit-card">
-                <h3>IA con validación humana</h3>
-                <p>
-                  Aceleramos el trabajo técnico sin resignar criterio ni calidad.
-                </p>
-              </article>
-
-              <article className="benefit-card">
-                <h3>Precio justo</h3>
-                <p>No vendemos horas de más: cobramos por resolver bien.</p>
-              </article>
             </div>
           </div>
         </section>
