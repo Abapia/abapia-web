@@ -4,6 +4,7 @@ function App() {
   const [enviado, setEnviado] = useState(false)
   const [enviando, setEnviando] = useState(false)
   const [error, setError] = useState(false)
+  const [toastId, setToastId] = useState(0)
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -18,7 +19,9 @@ function App() {
       })
       if (res.ok) {
         setEnviado(true)
-        form.reset()
+        setToastId((n) => n + 1)
+        form.mensaje.value = ''
+        setTimeout(() => setEnviado(false), 4000)
       } else {
         setError(true)
       }
@@ -434,12 +437,6 @@ function App() {
 
             <div className="contact-stack">
               <div className="contact-grid">
-                {enviado ? (
-                  <div className="contact-form contact-form-success">
-                    <h3>¡Gracias!</h3>
-                    <p>Recibimos tu consulta. Te respondemos a la brevedad.</p>
-                  </div>
-                ) : (
                 <form
                   className="contact-form"
                   action="https://formspree.io/f/mykraqjy"
@@ -479,7 +476,6 @@ function App() {
                     </p>
                   )}
                 </form>
-                )}
 
                 <aside className="contact-side">
                   <div className="contact-text">
@@ -552,6 +548,12 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {enviado && (
+        <div key={toastId} className="toast" role="status" aria-live="polite">
+          ✓ ¡Gracias! Recibimos tu consulta.
+        </div>
+      )}
     </>
   );
 }
