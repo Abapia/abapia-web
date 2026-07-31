@@ -1164,9 +1164,9 @@ h3 {
   margin: 0 auto;
 }
 
-.contact-side-top {
+.contact-side-mid {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .contact-side-actions {

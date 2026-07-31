@@ -558,12 +558,13 @@ function App() {
                 </form>
 
                 <aside className="contact-side">
-                  <div className="contact-side-top">
-                    <img
-                      src="/logo-abapia.png"
-                      alt="ABAPIA"
-                      className="contact-side-logo"
-                    />
+                  <img
+                    src="/logo-abapia.png"
+                    alt="ABAPIA"
+                    className="contact-side-logo"
+                  />
+
+                  <div className="contact-side-mid">
                     <p className="contact-side-tag">
                       Desarrollo SAP ABAP, sin horas infladas.
                     </p>
