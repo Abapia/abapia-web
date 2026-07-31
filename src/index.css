@@ -1051,7 +1051,7 @@ h3 {
   align-items: stretch;
   padding: 34px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
+  border-radius: 18px;
   background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.022));
 }
 

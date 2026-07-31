@@ -510,7 +510,7 @@ function App() {
               <p>
                 ¿No sabés qué modalidad te sirve? Contanos tu caso y lo vemos
                 juntos. Desarrollos, soporte o backlog técnico: escribinos.
-                Respondemos en menos de 24 h hábiles y el relevamiento inicial es
+                Respondemos en menos de 24 hs hábiles y el relevamiento inicial es
                 sin cargo.
               </p>
             </div>
@@ -569,7 +569,7 @@ function App() {
                       Desarrollo SAP ABAP, sin horas infladas.
                     </p>
                     <ul className="contact-checks">
-                      <li>Respondemos en 24 h hábiles</li>
+                      <li>Respondemos en 24 hs hábiles</li>
                       <li>Relevamiento inicial sin cargo</li>
                       <li>Validación humana experta</li>
                     </ul>
