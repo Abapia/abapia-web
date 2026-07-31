@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 
 * {
   margin: 0;
@@ -41,8 +41,8 @@ a {
 h1,
 h2,
 h3 {
-  font-family: 'Manrope', 'Inter', Arial, sans-serif;
-  letter-spacing: -0.03em;
+  font-family: 'Hanken Grotesk', 'Inter', Arial, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 #root {
@@ -870,7 +870,7 @@ h3 {
 }
 
 .trust-value {
-  font-family: 'Manrope', 'Inter', Arial, sans-serif;
+  font-family: 'Hanken Grotesk', 'Inter', Arial, sans-serif;
   font-size: 26px;
   font-weight: 800;
   color: #eaf4ff;
@@ -1110,12 +1110,6 @@ h3 {
   .form-row {
     grid-template-columns: 1fr;
   }
-}
-
-.hero-note {
-  margin-top: 14px;
-  font-size: 14px;
-  color: #9fb0c9;
 }
 
 .tech-chips {

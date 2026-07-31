@@ -84,11 +84,6 @@ function App() {
               </a>
             </div>
 
-            <p className="hero-note">
-              ✓ Relevamiento y estimación inicial sin cargo · Respondemos en 24 h
-              hábiles
-            </p>
-
             <div className="hero-badges">
               <span>Más velocidad</span>
               <span>Menos backlog</span>
