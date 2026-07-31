@@ -404,11 +404,9 @@ function App() {
 
             <div className="contact-stack">
               <div className="contact-grid">
-                {/* Para que el formulario envíe: creá una cuenta gratis en formspree.io
-                    y reemplazá TU_ID por el ID de tu formulario. */}
                 <form
                   className="contact-form"
-                  action="https://formspree.io/f/TU_ID"
+                  action="https://formspree.io/f/mykraqjy"
                   method="POST"
                 >
                   <div className="form-row">
