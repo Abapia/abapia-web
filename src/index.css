@@ -1161,6 +1161,17 @@ h3 {
   width: 150px;
   height: auto;
   display: block;
+  margin: 0 auto;
+}
+
+.contact-side-top {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-side-actions {
+  display: grid;
+  gap: 14px;
 }
 
 .contact-side-tag {
