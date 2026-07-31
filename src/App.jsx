@@ -44,6 +44,7 @@ function App() {
             <a href="#servicios">Servicios</a>
             <a href="#modalidades">Modalidades</a>
             <a href="#nosotros">Nosotros</a>
+            <a href="#porque-abapia">Por qué ABAPIA</a>
             <a href="#metodo">Cómo trabajamos</a>
             <a href="#ideal-para">Ideal para</a>
             <a href="#faq">FAQ</a>
@@ -78,6 +79,11 @@ function App() {
               </a>
             </div>
 
+            <p className="hero-note">
+              ✓ Relevamiento y estimación inicial sin cargo · Respondemos en 24 h
+              hábiles
+            </p>
+
             <div className="hero-badges">
               <span>Más velocidad</span>
               <span>Menos backlog</span>
@@ -90,16 +96,16 @@ function App() {
           <div className="container">
             <div className="trust-bar">
               <div className="trust-item">
-                <span className="trust-value">+20 años</span>
-                <span className="trust-label">de experiencia en SAP ABAP</span>
+                <span className="trust-value">Equipo senior</span>
+                <span className="trust-label">consultores con +20 años cada uno</span>
+              </div>
+              <div className="trust-item">
+                <span className="trust-value">Escalable</span>
+                <span className="trust-label">capacidad que crece con tu demanda</span>
               </div>
               <div className="trust-item">
                 <span className="trust-value">IA + humano</span>
                 <span className="trust-label">validación experta en cada entrega</span>
-              </div>
-              <div className="trust-item">
-                <span className="trust-value">Precio justo</span>
-                <span className="trust-label">sin horas infladas ni relleno</span>
               </div>
             </div>
           </div>
@@ -121,8 +127,9 @@ function App() {
                 <div className="service-card-body">
                   <h3>Desarrollo ABAP a medida</h3>
                   <p>
-                    Reportes, ALV, interfaces, formularios, programas Z, mejoras,
-                    BADIs, user exits y ajustes técnicos.
+                    Reportes y ALV, interfaces (IDoc, RFC, webservices/REST/Proxy),
+                    formularios (Smartforms, SAPscript, Adobe), programas Z, BAPIs,
+                    BADIs, user exits y enhancements.
                   </p>
                 </div>
                 <div className="service-card-footer">
@@ -134,8 +141,8 @@ function App() {
                 <div className="service-card-body">
                   <h3>Soporte y correctivo</h3>
                   <p>
-                    Resolución de tickets, corrección de errores y optimización
-                    técnica sobre desarrollos existentes.
+                    Resolución de tickets, corrección de errores, jobs y ajustes
+                    sobre desarrollos existentes.
                   </p>
                 </div>
                 <div className="service-card-footer">
@@ -147,14 +154,29 @@ function App() {
                 <div className="service-card-body">
                   <h3>Mejoras evolutivas y performance</h3>
                   <p>
-                    Evolución de soluciones existentes, tuning y mejoras de
-                    performance y mantenibilidad del código.
+                    Tuning, lecturas eficientes en memoria (ABAP for HANA) y
+                    mejoras de mantenibilidad del código.
                   </p>
                 </div>
                 <div className="service-card-footer">
                   <div className="card-tag">Sobre lo que ya tenés</div>
                 </div>
               </article>
+            </div>
+
+            <div className="tech-chips">
+              <span>IDocs</span>
+              <span>RFC</span>
+              <span>BAPIs</span>
+              <span>BADIs</span>
+              <span>User exits</span>
+              <span>Enhancements</span>
+              <span>Smartforms</span>
+              <span>Adobe Forms</span>
+              <span>Webservices/REST</span>
+              <span>Open SQL</span>
+              <span>ABAP for HANA</span>
+              <span>Performance</span>
             </div>
           </div>
         </section>
@@ -250,30 +272,70 @@ function App() {
             <div className="about-box">
               <div className="about-intro">
                 <span className="eyebrow">Nosotros</span>
-                <h2>Experiencia real en SAP ABAP. IA aplicada con criterio.</h2>
+                <h2>Un equipo senior con experiencia real. IA aplicada con criterio.</h2>
               </div>
 
               <div className="about-content">
                 <p>La eficiencia también debería beneficiar al cliente.</p>
 
                 <p>
-                  Tenemos más de 20 años desarrollando en SAP ABAP y conocemos de
-                  cerca cómo se estiman, ejecutan y entregan los desarrollos dentro
-                  del mundo de las consultoras.
+                  Somos un equipo de capacidad escalable de consultores SAP senior,
+                  cada uno con más de 20 años de experiencia. Conocemos de cerca
+                  cómo se estiman, ejecutan y entregan los desarrollos dentro del
+                  mundo de las consultoras.
                 </p>
 
                 <p>
                   Usamos IA como acelerador técnico, siempre con validación humana
-                  experta. Esa mejora no queda solo del lado del proveedor: se
-                  traduce en estimaciones más razonables y precios más justos. No
-                  vendemos horas de más; resolvemos bien y construimos relaciones de
-                  largo plazo.
+                  experta. Esa mejora se traduce en estimaciones más razonables y
+                  precios más justos: no vendemos horas de más, resolvemos bien y
+                  construimos relaciones de largo plazo.
                 </p>
 
                 <div className="about-highlight">
                   Más velocidad para ejecutar. Más claridad para el cliente.
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-divider" id="porque-abapia">
+          <div className="container">
+            <div className="section-heading">
+              <span className="eyebrow">Por qué ABAPIA</span>
+              <h2>Una forma más ágil y confiable de resolver tu SAP</h2>
+              <p>
+                Combinamos la flexibilidad de una estructura liviana con el
+                criterio y la confiabilidad de un servicio profesional.
+              </p>
+            </div>
+
+            <div className="benefits-grid">
+              <article className="benefit-card">
+                <h3>Más que un freelance</h3>
+                <p>
+                  Somos un equipo con estructura, orden y continuidad: no dependés
+                  de una sola persona.
+                </p>
+              </article>
+
+              <article className="benefit-card">
+                <h3>Más ágil que una consultora tradicional</h3>
+                <p>Respuesta rápida, cercanía y menos fricción operativa.</p>
+              </article>
+
+              <article className="benefit-card">
+                <h3>IA con validación humana</h3>
+                <p>
+                  Aceleramos el trabajo técnico sin resignar criterio ni calidad.
+                </p>
+              </article>
+
+              <article className="benefit-card">
+                <h3>Precio justo</h3>
+                <p>No vendemos horas de más: cobramos por resolver bien.</p>
+              </article>
             </div>
           </div>
         </section>
@@ -420,6 +482,31 @@ function App() {
                   la ejecución.
                 </p>
               </article>
+
+              <article className="faq-item">
+                <h3>¿Pueden trabajar como subcontratistas o bajo la marca del cliente?</h3>
+                <p>
+                  Sí. Con consultoras trabajamos como capacidad externa,
+                  integrándonos a tu delivery y, si hace falta, de forma
+                  transparente frente al cliente final.
+                </p>
+              </article>
+
+              <article className="faq-item">
+                <h3>¿Cómo manejan la confidencialidad y los accesos?</h3>
+                <p>
+                  Trabajamos con acuerdos de confidencialidad y accesos acotados a
+                  lo necesario, cuidando el código y los datos del cliente.
+                </p>
+              </article>
+
+              <article className="faq-item">
+                <h3>¿Cómo cotizan un trabajo?</h3>
+                <p>
+                  Arrancamos con un relevamiento inicial sin cargo y te pasamos una
+                  estimación clara, con horas, supuestos y exclusiones.
+                </p>
+              </article>
             </div>
           </div>
         </section>
@@ -432,6 +519,8 @@ function App() {
               <p>
                 ¿No sabés qué modalidad te sirve? Contanos tu caso y lo vemos
                 juntos. Desarrollos, soporte o backlog técnico: escribinos.
+                Respondemos en menos de 24 h hábiles y el relevamiento inicial es
+                sin cargo.
               </p>
             </div>
 

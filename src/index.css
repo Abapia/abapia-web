@@ -334,7 +334,7 @@ h3 {
 }
 
 .service-card-body p {
-  max-width: 34ch;
+  max-width: none;
 }
 
 .service-card-footer {
@@ -1123,4 +1123,27 @@ h3 {
   .form-row {
     grid-template-columns: 1fr;
   }
+}
+
+.hero-note {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #9fb0c9;
+}
+
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.tech-chips span {
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  background: rgba(255, 255, 255, 0.03);
+  color: #c3d1e6;
+  font-size: 13px;
 }
