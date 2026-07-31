@@ -9,9 +9,8 @@ function App() {
 
           <nav className="header-nav">
             <a href="#servicios">Servicios</a>
-            <a href="#paquetes">Paquetes</a>
+            <a href="#modalidades">Modalidades</a>
             <a href="#nosotros">Nosotros</a>
-            <a href="#porque-abapia">Por qué ABAPIA</a>
             <a href="#metodo">Cómo trabajamos</a>
             <a href="#ideal-para">Ideal para</a>
             <a href="#faq">FAQ</a>
@@ -32,16 +31,17 @@ function App() {
             <p className="hero-subtitle">Desarrollo ABAP acelerado por IA</p>
 
             <p className="hero-description">
-              Ayudamos a empresas y consultoras SAP a resolver desarrollos ABAP,
-              tickets y mejoras técnicas más rápido, con validación experta humana.
+              Sumá capacidad técnica a tu equipo SAP para resolver desarrollos,
+              tickets y mejoras más rápido. IA para acelerar, validación humana
+              experta para garantizar la calidad, y precio justo sin horas de más.
             </p>
 
             <div className="hero-actions">
               <a href="#contacto" className="btn btn-primary">
                 Hablar con ABAPIA
               </a>
-              <a href="#servicios" className="btn btn-secondary">
-                Ver servicios
+              <a href="#modalidades" className="btn btn-secondary">
+                Ver modalidades
               </a>
             </div>
 
@@ -53,98 +53,160 @@ function App() {
           </div>
         </section>
 
+        <section className="trust-bar-section">
+          <div className="container">
+            <div className="trust-bar">
+              <div className="trust-item">
+                <span className="trust-value">+20 años</span>
+                <span className="trust-label">de experiencia en SAP ABAP</span>
+              </div>
+              <div className="trust-item">
+                <span className="trust-value">IA + humano</span>
+                <span className="trust-label">validación experta en cada entrega</span>
+              </div>
+              <div className="trust-item">
+                <span className="trust-value">Precio justo</span>
+                <span className="trust-label">sin horas infladas ni relleno</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="section section-divider" id="servicios">
           <div className="container">
             <div className="section-heading">
               <span className="eyebrow">Servicios</span>
-              <h2>Qué hace ABAPIA</h2>
+              <h2>Qué resolvemos</h2>
               <p>
-                Soluciones concretas para empresas y consultoras SAP que necesitan
-                más capacidad técnica, menos demora y mejor respuesta.
+                Capacidad técnica ABAP para lo que tu equipo necesita destrabar,
+                con el alcance cerrado o ayudándote a definirlo.
               </p>
             </div>
 
             <div className="cards-grid">
               <article className="card service-card service-card-featured">
                 <div className="service-card-body">
-                  <h3>Desarrollo ABAP bajo demanda</h3>
+                  <h3>Desarrollo ABAP a medida</h3>
                   <p>
-                    Desarrollos ABAP a medida para resolver necesidades técnicas puntuales.
+                    Reportes, ALV, interfaces, formularios, programas Z, mejoras,
+                    BADIs, user exits y ajustes técnicos.
                   </p>
                 </div>
                 <div className="service-card-footer">
-                  <div className="card-tag">Ideal para requerimientos puntuales</div>
+                  <div className="card-tag">Nuevos desarrollos</div>
                 </div>
               </article>
 
               <article className="card service-card">
                 <div className="service-card-body">
-                  <h3>Soporte evolutivo y correctivo</h3>
+                  <h3>Soporte y correctivo</h3>
                   <p>
-                    Resolución de tickets, corrección de errores, mejoras sobre
-                    desarrollos existentes y optimización técnica.
+                    Resolución de tickets, corrección de errores y optimización
+                    técnica sobre desarrollos existentes.
                   </p>
                 </div>
                 <div className="service-card-footer">
-                  <div className="card-tag">Ideal para backlog y soporte continuo</div>
+                  <div className="card-tag">Backlog y soporte</div>
                 </div>
               </article>
 
               <article className="card service-card">
                 <div className="service-card-body">
-                  <h3>Bolsa mensual ABAP</h3>
+                  <h3>Mejoras evolutivas y performance</h3>
                   <p>
-                    Capacidad técnica reservada por mes para acompañar backlog,
-                    soporte continuo y demanda variable.
+                    Evolución de soluciones existentes, tuning y mejoras de
+                    performance y mantenibilidad del código.
                   </p>
                 </div>
                 <div className="service-card-footer">
-                  <div className="card-tag">Ideal para consultoras y equipos chicos</div>
+                  <div className="card-tag">Sobre lo que ya tenés</div>
                 </div>
               </article>
             </div>
           </div>
         </section>
 
-        <section className="section section-alt" id="paquetes">
+        <section className="section section-alt" id="modalidades">
           <div className="container">
             <div className="section-heading">
-              <span className="eyebrow">Paquetes</span>
-              <h2>Tres formas simples de trabajar con ABAPIA</h2>
+              <span className="eyebrow">Modalidades</span>
+              <h2>Cómo trabajás con nosotros</h2>
               <p>
-                Elegimos la modalidad según el tipo de necesidad, el ritmo del
-                cliente y el nivel de acompañamiento que haga falta.
+                Elegí según el tipo de necesidad y el nivel de acompañamiento.
+                Sin estructura fija y sin ataduras.
               </p>
             </div>
 
-            <div className="cards-grid">
-              <article className="card">
-                <h3>ABAPIA Sprint</h3>
-                <p>
-                  Ideal para resolver un requerimiento puntual y conocer nuestra
-                  forma de trabajo. Incluye relevamiento breve, alcance acotado,
-                  desarrollo o ajuste técnico, prueba básica y entrega para
-                  validación.
-                </p>
+            <div className="cards-grid pkg-grid">
+              <article className="card pkg-card">
+                <div className="pkg-head">
+                  <h3>ABAPIA Sprint</h3>
+                  <p className="pkg-desc">
+                    Un requerimiento puntual. Ideal para arrancar y conocer nuestra
+                    forma de trabajo.
+                  </p>
+                </div>
+                <ul className="pkg-includes">
+                  <li>Relevamiento breve</li>
+                  <li>Alcance acotado</li>
+                  <li>Desarrollo o ajuste técnico</li>
+                  <li>Prueba básica</li>
+                  <li>Entrega para validación</li>
+                </ul>
+                <div className="pkg-foot">
+                  <div className="card-tag">Ideal para un primer trabajo</div>
+                  <a href="#contacto" className="btn btn-secondary pkg-cta">
+                    Hablemos de un Sprint
+                  </a>
+                </div>
               </article>
 
-              <article className="card">
-                <h3>ABAPIA Delivery</h3>
-                <p>
-                  Pensado para cuando ya hay un desarrollo ABAP concreto para
-                  ejecutar. Incluye análisis técnico, estimación, desarrollo,
-                  pruebas técnicas, ajustes razonables dentro del alcance y
-                  entrega lista para validar.
-                </p>
+              <article className="card pkg-card pkg-card-featured">
+                <div className="pkg-badge">Más elegido</div>
+                <div className="pkg-head">
+                  <h3>ABAPIA Delivery</h3>
+                  <p className="pkg-desc">
+                    Ya tenés un desarrollo concreto para ejecutar y querés una
+                    entrega llave en mano.
+                  </p>
+                </div>
+                <ul className="pkg-includes">
+                  <li>Análisis técnico</li>
+                  <li>Estimación clara</li>
+                  <li>Desarrollo completo</li>
+                  <li>Pruebas técnicas</li>
+                  <li>Ajustes dentro del alcance</li>
+                  <li>Entrega lista para validar</li>
+                </ul>
+                <div className="pkg-foot">
+                  <div className="card-tag">Ideal para un proyecto definido</div>
+                  <a href="#contacto" className="btn btn-primary pkg-cta">
+                    Hablemos de un Delivery
+                  </a>
+                </div>
               </article>
 
-              <article className="card">
-                <h3>ABAPIA Partner</h3>
-                <p>
-                  Una bolsa mensual de horas para acompañar backlog, tickets,
-                  ajustes y mejoras de manera continua. Es la opción más flexible
-                  para sumar capacidad técnica sin incorporar estructura fija.
-                </p>
+              <article className="card pkg-card">
+                <div className="pkg-head">
+                  <h3>ABAPIA Partner</h3>
+                  <p className="pkg-desc">
+                    Una bolsa mensual de horas para acompañar tu backlog de forma
+                    continua.
+                  </p>
+                </div>
+                <ul className="pkg-includes">
+                  <li>Capacidad reservada por mes</li>
+                  <li>Backlog, tickets y mejoras</li>
+                  <li>Prioridades flexibles</li>
+                  <li>Previsibilidad de costos</li>
+                  <li>Sin incorporar estructura fija</li>
+                </ul>
+                <div className="pkg-foot">
+                  <div className="card-tag">Ideal para consultoras y equipos chicos</div>
+                  <a href="#contacto" className="btn btn-secondary pkg-cta">
+                    Hablemos de Partner
+                  </a>
+                </div>
               </article>
             </div>
           </div>
@@ -162,33 +224,17 @@ function App() {
                 <p>La eficiencia también debería beneficiar al cliente.</p>
 
                 <p>
-                  En ABAPIA tenemos más de 20 años de experiencia en desarrollo
-                  SAP ABAP y conocemos de cerca cómo se estiman, ejecutan y
-                  entregan los desarrollos dentro del mundo de las consultoras.
+                  Tenemos más de 20 años desarrollando en SAP ABAP y conocemos de
+                  cerca cómo se estiman, ejecutan y entregan los desarrollos dentro
+                  del mundo de las consultoras.
                 </p>
 
                 <p>
-                  La inteligencia artificial cambió la forma de trabajar. Hoy
-                  permite acelerar tareas técnicas, reducir tiempos operativos y
-                  mejorar la ejecución sin resignar calidad.
-                </p>
-
-                <p>
-                  Creemos que esa mejora no debería quedar solo del lado del
-                  proveedor. También debería traducirse en estimaciones más
-                  razonables, mayor transparencia y una relación más sana con el
-                  cliente.
-                </p>
-
-                <p>
-                  Por eso usamos IA como acelerador técnico, siempre con
-                  validación humana experta, para entregar con más velocidad,
-                  más claridad y más honestidad.
-                </p>
-
-                <p>
-                  Nuestro objetivo no es vender horas de más. Es resolver bien,
-                  cobrar lo justo y construir relaciones de largo plazo.
+                  Usamos IA como acelerador técnico, siempre con validación humana
+                  experta. Esa mejora no queda solo del lado del proveedor: se
+                  traduce en estimaciones más razonables y precios más justos. No
+                  vendemos horas de más; resolvemos bien y construimos relaciones de
+                  largo plazo.
                 </p>
 
                 <div className="about-highlight">
@@ -199,54 +245,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section section-alt" id="porque-abapia">
-          <div className="container">
-            <div className="section-heading">
-              <span className="eyebrow">Por qué ABAPIA</span>
-              <h2>Una forma más moderna y transparente de desarrollar</h2>
-              <p>
-                La tecnología cambió. En ABAPIA usamos IA donde realmente suma,
-                pero la calidad final siempre la garantiza un programador experto.
-              </p>
-            </div>
-
-            <div className="benefits-grid">
-              <article className="benefit-card">
-                <h3>Experiencia real en SAP ABAP</h3>
-                <p>
-                  No se trata solo de escribir código: se trata de entender el
-                  proceso, el impacto técnico y la calidad de entrega.
-                </p>
-              </article>
-
-              <article className="benefit-card">
-                <h3>IA como acelerador, no como humo</h3>
-                <p>
-                  Aprovechamos la IA para acelerar análisis, construcción y
-                  documentación, sin improvisar ni bajar el nivel técnico.
-                </p>
-              </article>
-
-              <article className="benefit-card">
-                <h3>Menos backlog, mejor respuesta</h3>
-                <p>
-                  Sumamos capacidad técnica real para que los pendientes avancen
-                  más rápido y con mejor previsibilidad.
-                </p>
-              </article>
-
-              <article className="benefit-card">
-                <h3>Validación humana experta</h3>
-                <p>
-                  La velocidad sola no alcanza. Todo desarrollo pasa por revisión
-                  técnica antes de ser entregado.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="section section-divider" id="metodo">
+        <section className="section section-alt" id="metodo">
           <div className="container">
             <div className="section-heading">
               <span className="eyebrow">Cómo trabajamos</span>
@@ -303,7 +302,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section section-alt" id="ideal-para">
+        <section className="section section-divider" id="ideal-para">
           <div className="container">
             <div className="section-heading">
               <span className="eyebrow">Ideal para</span>
@@ -357,45 +356,35 @@ function App() {
               <article className="faq-item">
                 <h3>¿Qué tipo de desarrollos puede tomar ABAPIA?</h3>
                 <p>
-                  ABAPIA puede acompañar desarrollos ABAP puntuales, ajustes sobre
-                  soluciones existentes, tickets técnicos, backlog y mejoras
-                  evolutivas.
+                  Desarrollos ABAP puntuales, ajustes sobre soluciones existentes,
+                  tickets técnicos, backlog y mejoras evolutivas.
                 </p>
               </article>
 
               <article className="faq-item">
                 <h3>¿Trabajan por requerimiento puntual o también de forma continua?</h3>
                 <p>
-                  Ambas opciones. Podemos trabajar con una necesidad puntual a
-                  través de Sprint o Delivery, o acompañar de forma continua con
-                  la modalidad Partner.
-                </p>
-              </article>
-
-              <article className="faq-item">
-                <h3>¿Pueden acompañar backlog, tickets y soporte técnico?</h3>
-                <p>
-                  Sí. Una de las formas más habituales de trabajo es justamente
-                  ayudar a destrabar pendientes, resolver tickets y sumar
-                  capacidad técnica sin agrandar estructura fija.
+                  Ambas. Podés trabajar con una necesidad puntual a través de Sprint
+                  o Delivery, o acompañarte de forma continua con la modalidad
+                  Partner.
                 </p>
               </article>
 
               <article className="faq-item">
                 <h3>¿Cómo es el arranque de un nuevo trabajo?</h3>
                 <p>
-                  Empezamos con un relevamiento breve para entender la necesidad,
-                  el alcance y el contexto técnico. A partir de eso definimos la
-                  mejor modalidad de trabajo y el siguiente paso.
+                  Empezamos con un relevamiento breve para entender la necesidad, el
+                  alcance y el contexto técnico. A partir de eso definimos la mejor
+                  modalidad y el siguiente paso.
                 </p>
               </article>
 
               <article className="faq-item">
                 <h3>¿Es necesario tener el alcance completamente cerrado?</h3>
                 <p>
-                  No siempre. Si el requerimiento todavía necesita orden, podemos
-                  ayudarte a bajarlo a una propuesta más clara antes de avanzar
-                  con la ejecución.
+                  No siempre. Si el requerimiento todavía necesita orden, te
+                  ayudamos a bajarlo a una propuesta más clara antes de avanzar con
+                  la ejecución.
                 </p>
               </article>
             </div>
@@ -408,23 +397,70 @@ function App() {
               <span className="eyebrow">Contacto</span>
               <h2>Hablemos</h2>
               <p>
-                Si querés conversar sobre desarrollos, soporte o backlog técnico,
-                escribinos.
+                ¿No sabés qué modalidad te sirve? Contanos tu caso y lo vemos
+                juntos. Desarrollos, soporte o backlog técnico: escribinos.
               </p>
             </div>
 
             <div className="contact-stack">
-              <div className="contact-box">
-                <div className="contact-text">
-                  <h3>ABAPIA</h3>
-                  <p>Desarrollo ABAP acelerado por IA</p>
-                </div>
+              <div className="contact-grid">
+                {/* Para que el formulario envíe: creá una cuenta gratis en formspree.io
+                    y reemplazá TU_ID por el ID de tu formulario. */}
+                <form
+                  className="contact-form"
+                  action="https://formspree.io/f/TU_ID"
+                  method="POST"
+                >
+                  <div className="form-row">
+                    <label>
+                      Nombre
+                      <input type="text" name="nombre" required placeholder="Tu nombre" />
+                    </label>
+                    <label>
+                      Email
+                      <input type="email" name="email" required placeholder="tu@email.com" />
+                    </label>
+                  </div>
+                  <label>
+                    Empresa <span className="form-opt">(opcional)</span>
+                    <input type="text" name="empresa" placeholder="Nombre de tu empresa" />
+                  </label>
+                  <label>
+                    Contanos tu caso
+                    <textarea
+                      name="mensaje"
+                      rows="4"
+                      required
+                      placeholder="Qué necesitás resolver: backlog, tickets, un desarrollo puntual…"
+                    ></textarea>
+                  </label>
+                  <button type="submit" className="btn btn-primary">
+                    Enviar consulta
+                  </button>
+                </form>
 
-                <div className="contact-actions">
-                  <a href="mailto:contacto@abapia.com" className="btn btn-primary btn-fixed">
+                <aside className="contact-side">
+                  <div className="contact-text">
+                    <h3>ABAPIA</h3>
+                    <p>Desarrollo ABAP acelerado por IA</p>
+                  </div>
+                  <a href="mailto:contacto@abapia.com" className="btn btn-secondary btn-fixed">
                     Escribinos a contacto@abapia.com
                   </a>
-                </div>
+                  <a
+                    href="https://www.linkedin.com/company/abapia/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="contact-link-item"
+                  >
+                    <span className="contact-link-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.96 1.96 0 0 0 3.3 4.95 1.95 1.95 0 0 0 5.23 6.9h.02a1.95 1.95 0 1 0 0-3.9ZM20.7 12.83c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.62c.04.74 0 11.5 0 11.5H13v-6.42c0-.34.02-.68.12-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.88 1.02 1.88 2.52V20h3.38v-7.17Z" />
+                      </svg>
+                    </span>
+                    <span>LinkedIn</span>
+                  </a>
+                </aside>
               </div>
 
               <div className="contact-secondary-heading">
@@ -437,7 +473,7 @@ function App() {
 
               <div className="career-box">
                 <div className="career-text">
-                  <h3>Envíanos tu perfil</h3>
+                  <h3>Envianos tu perfil</h3>
                   <p>
                     Buscamos perfiles técnicos con ganas de construir una forma más
                     ágil, moderna y transparente de desarrollar en SAP.
