@@ -507,16 +507,6 @@ h3 {
   gap: 28px;
 }
 
-.contact-text h3 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.contact-text p {
-  color: #9fb0c9;
-  font-size: 18px;
-}
-
 .contact-actions {
   display: flex;
   flex-direction: column;
@@ -781,7 +771,6 @@ h3 {
   .step-card p,
   .ideal-card p,
   .career-text p,
-  .contact-text p,
   .contact-secondary-heading p,
   .about-content p {
     font-size: 16px;
@@ -796,7 +785,6 @@ h3 {
   .step-card h3,
   .ideal-card h3,
   .career-text h3,
-  .contact-text h3,
   .faq-item h3 {
     font-size: 22px;
   }
@@ -954,7 +942,7 @@ h3 {
   display: grid;
   grid-template-columns: 1.4fr 0.8fr;
   gap: 28px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .contact-form {
@@ -1080,22 +1068,13 @@ h3 {
 .contact-side {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 16px;
   align-items: stretch;
   padding: 34px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 22px;
   background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.022));
-}
-
-.contact-side .btn-fixed {
-  min-width: 0;
-  width: 100%;
-}
-
-.contact-side .contact-text h3 {
-  font-size: 26px;
-  margin-bottom: 6px;
 }
 
 @media (max-width: 980px) {
@@ -1198,4 +1177,28 @@ h3 {
   .manifesto p {
     font-size: 16px;
   }
+}
+
+.contact-side-logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.contact-side-top p {
+  color: #9fb0c9;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.contact-side-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-side .btn,
+.contact-side .contact-link-item {
+  width: 100%;
 }

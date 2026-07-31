@@ -558,26 +558,32 @@ function App() {
                 </form>
 
                 <aside className="contact-side">
-                  <div className="contact-text">
-                    <h3>ABAPIA</h3>
-                    <p>Desarrollo ABAP acelerado por IA</p>
+                  <div className="contact-side-top">
+                    <img
+                      src="/logo-abapia.png"
+                      alt="ABAPIA"
+                      className="contact-side-logo"
+                    />
+                    <p>Desarrollo SAP ABAP, sin horas infladas.</p>
                   </div>
-                  <a href="mailto:contacto@abapia.com" className="btn btn-secondary btn-fixed">
-                    Escribinos a contacto@abapia.com
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/abapia/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="contact-link-item"
-                  >
-                    <span className="contact-link-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.96 1.96 0 0 0 3.3 4.95 1.95 1.95 0 0 0 5.23 6.9h.02a1.95 1.95 0 1 0 0-3.9ZM20.7 12.83c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.62c.04.74 0 11.5 0 11.5H13v-6.42c0-.34.02-.68.12-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.88 1.02 1.88 2.52V20h3.38v-7.17Z" />
-                      </svg>
-                    </span>
-                    <span>LinkedIn</span>
-                  </a>
+                  <div className="contact-side-actions">
+                    <a href="mailto:contacto@abapia.com" className="btn btn-secondary">
+                      Escribinos a contacto@abapia.com
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/abapia/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="contact-link-item"
+                    >
+                      <span className="contact-link-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.96 1.96 0 0 0 3.3 4.95 1.95 1.95 0 0 0 5.23 6.9h.02a1.95 1.95 0 1 0 0-3.9ZM20.7 12.83c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.62c.04.74 0 11.5 0 11.5H13v-6.42c0-.34.02-.68.12-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.88 1.02 1.88 2.52V20h3.38v-7.17Z" />
+                        </svg>
+                      </span>
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
                 </aside>
               </div>
 
