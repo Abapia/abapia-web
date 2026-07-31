@@ -1026,6 +1026,28 @@ h3 {
   resize: vertical;
 }
 
+.contact-form button[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-error {
+  margin: 0;
+  font-size: 14px;
+  color: #fca5a5;
+}
+
+.contact-form-success {
+  align-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.contact-form-success p {
+  margin: 0;
+  color: #c3d1e6;
+}
+
 .contact-side {
   display: flex;
   flex-direction: column;

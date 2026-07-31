@@ -1,4 +1,34 @@
+import { useState } from 'react'
+
 function App() {
+  const [enviado, setEnviado] = useState(false)
+  const [enviando, setEnviando] = useState(false)
+  const [error, setError] = useState(false)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const form = e.target
+    setEnviando(true)
+    setError(false)
+    try {
+      const res = await fetch('https://formspree.io/f/mykraqjy', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      })
+      if (res.ok) {
+        setEnviado(true)
+        form.reset()
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setEnviando(false)
+    }
+  }
+
   return (
     <>
       <header className="site-header">
@@ -404,10 +434,17 @@ function App() {
 
             <div className="contact-stack">
               <div className="contact-grid">
+                {enviado ? (
+                  <div className="contact-form contact-form-success">
+                    <h3>¡Gracias!</h3>
+                    <p>Recibimos tu consulta. Te respondemos a la brevedad.</p>
+                  </div>
+                ) : (
                 <form
                   className="contact-form"
                   action="https://formspree.io/f/mykraqjy"
                   method="POST"
+                  onSubmit={handleSubmit}
                 >
                   <div className="form-row">
                     <label>
@@ -432,10 +469,17 @@ function App() {
                       placeholder="Qué necesitás resolver: backlog, tickets, un desarrollo puntual…"
                     ></textarea>
                   </label>
-                  <button type="submit" className="btn btn-primary">
-                    Enviar consulta
+                  <button type="submit" className="btn btn-primary" disabled={enviando}>
+                    {enviando ? 'Enviando…' : 'Enviar consulta'}
                   </button>
+                  {error && (
+                    <p className="form-error">
+                      No se pudo enviar. Probá de nuevo o escribinos a
+                      contacto@abapia.com.
+                    </p>
+                  )}
                 </form>
+                )}
 
                 <aside className="contact-side">
                   <div className="contact-text">
