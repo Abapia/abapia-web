@@ -1,10 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
   const [enviado, setEnviado] = useState(false)
   const [enviando, setEnviando] = useState(false)
   const [error, setError] = useState(false)
   const [toastId, setToastId] = useState(0)
+
+  // Al entrar directo con un hash en la URL (ej. abapia.com/#contacto desde LinkedIn),
+  // esperamos a que la SPA renderice y recién ahí hacemos scroll a la sección.
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.slice(1)
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      })
+    }
+  }, [])
 
   async function handleSubmit(e) {
     e.preventDefault()
