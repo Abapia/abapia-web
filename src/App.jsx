@@ -96,8 +96,8 @@ function App() {
             <span className="hero-kicker">Desarrollo SAP ABAP con IA</span>
 
             <p className="hero-subtitle">
-              La IA ya hace tu desarrollo en la mitad del tiempo. ¿Por qué seguís
-              pagando el doble?
+              La IA ya acortó los desarrollos ABAP. ¿Por qué seguís pagando las
+              mismas horas?
             </p>
 
             <p className="hero-description">
@@ -129,7 +129,7 @@ function App() {
             <div className="trust-bar">
               <div className="trust-item">
                 <span className="trust-value">Equipo senior</span>
-                <span className="trust-label">consultores con +20 años cada uno</span>
+                <span className="trust-label">Experiencia senior en ABAP</span>
               </div>
               <div className="trust-item">
                 <span className="trust-value">Escalable</span>
@@ -343,7 +343,7 @@ function App() {
 
                 <p>
                   Somos un equipo de capacidad escalable de consultores SAP senior,
-                  cada uno con más de 20 años de experiencia. Conocemos de cerca
+                  con experiencia real en proyectos ABAP. Conocemos de cerca
                   cómo se estiman, ejecutan y entregan los desarrollos dentro del
                   mundo de las consultoras.
                 </p>
@@ -520,6 +520,17 @@ function App() {
                 <p>
                   Trabajamos con acuerdos de confidencialidad y accesos acotados a
                   lo necesario, cuidando el código y los datos del cliente.
+                </p>
+              </article>
+
+              <article className="faq-item">
+                <h3>¿Cómo usan la IA con nuestro código?</h3>
+                <p>
+                  Usamos IA como acelerador técnico sobre tu código, en cuentas
+                  configuradas para que la información no se use para entrenar
+                  modelos, siempre con revisión de un ABAP senior antes de
+                  entregar. Si preferís, anonimizamos o trabajamos dentro de tu
+                  entorno. Lo acordamos por escrito antes de empezar.
                 </p>
               </article>
 
