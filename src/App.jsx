@@ -249,6 +249,7 @@ function App() {
                     Un requerimiento puntual. Ideal para arrancar y conocer nuestra
                     forma de trabajo.
                   </p>
+                  <p className="pkg-note">Consultá por tu primer trabajo sin costo.</p>
                 </div>
                 <ul className="pkg-includes">
                   <li>Relevamiento breve</li>
@@ -266,7 +267,7 @@ function App() {
               </article>
 
               <article className="card pkg-card pkg-card-featured">
-                <div className="pkg-badge">Más elegido</div>
+                <div className="pkg-badge">Recomendado</div>
                 <div className="pkg-head">
                   <h3>ABAPIA Delivery</h3>
                   <p className="pkg-desc">
