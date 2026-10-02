@@ -92,19 +92,22 @@ function App() {
         <section className="hero">
           <div className="container hero-center">
             <img src="/logo-abapia.png" alt="ABAPIA" className="hero-logo" />
+            <p className="hero-signature">La IA acelera. La experiencia decide.</p>
 
-            <span className="hero-kicker">Desarrollo SAP ABAP con IA</span>
+            <span className="hero-kicker">Desarrollo SAP ABAP</span>
 
-            <p className="hero-subtitle">
-              La IA ya acortó los desarrollos ABAP. ¿Por qué seguís pagando las
-              mismas horas?
-            </p>
+            <h1 className="hero-title">
+              <span className="hero-title-line">
+                Tus desarrollos, en una fracción del tiempo.
+              </span>
+              <span className="hero-title-q">
+                ¿Por qué seguís pagando las mismas horas?
+              </span>
+            </h1>
 
             <p className="hero-description">
-              Usamos IA para entregar tus desarrollos SAP ABAP en una fracción del
-              tiempo — y ese ahorro es tuyo. Pagás por el trabajo real, no por
-              horas infladas. Seas una empresa con SAP o una consultora que
-              terceriza.
+              Resolvemos tu backlog y tus requerimientos ABAP más rápido —y ese
+              ahorro es tuyo—, con la validación de un consultor senior.
             </p>
 
             <div className="hero-actions">
@@ -116,11 +119,6 @@ function App() {
               </a>
             </div>
 
-            <div className="hero-badges">
-              <span>Más velocidad</span>
-              <span>Menos backlog</span>
-              <span>Validación experta</span>
-            </div>
           </div>
         </section>
 
@@ -665,7 +663,7 @@ function App() {
       <footer className="site-footer">
         <div className="container footer-inner">
           <div className="footer-content">
-            <p>© 2026 ABAPIA. Desarrollo ABAP acelerado por IA.</p>
+            <p>© 2026 ABAPIA. La IA acelera. La experiencia decide.</p>
 
             <a
               href="https://www.linkedin.com/company/abapia/"
