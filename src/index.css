@@ -1313,7 +1313,7 @@ h3 {
 .contact-side {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 18px;
   align-items: stretch;
   padding: 28px;
@@ -1425,10 +1425,10 @@ h3 {
 }
 
 .contact-side-logo {
-  width: 200px;
+  width: 100%;
   height: auto;
   display: block;
-  margin: -6px auto 0;
+  margin: -12px auto -40px;
 }
 
 .contact-side-mid {
