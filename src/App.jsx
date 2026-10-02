@@ -5,6 +5,7 @@ function App() {
   const [enviando, setEnviando] = useState(false)
   const [error, setError] = useState(false)
   const [toastId, setToastId] = useState(0)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   // Al entrar directo con un hash en la URL (ej. abapia.com/#contacto desde LinkedIn),
   // esperamos a que la SPA renderice y recién ahí hacemos scroll a la sección.
@@ -52,19 +53,38 @@ function App() {
             <img src="/logo-abapia.png" alt="ABAPIA" className="header-logo-img" />
           </a>
 
-          <nav className="header-nav">
-            <a href="#servicios">Servicios</a>
-            <a href="#modalidades">Modalidades</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#metodo">Cómo trabajamos</a>
-            <a href="#ideal-para">Ideal para</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contacto">Contacto</a>
+          <nav className={`header-nav${menuOpen ? ' is-open' : ''}`}>
+            <a href="#servicios" onClick={() => setMenuOpen(false)}>Servicios</a>
+            <a href="#modalidades" onClick={() => setMenuOpen(false)}>Modalidades</a>
+            <a href="#nosotros" onClick={() => setMenuOpen(false)}>Nosotros</a>
+            <a href="#metodo" onClick={() => setMenuOpen(false)}>Cómo trabajamos</a>
+            <a href="#ideal-para" onClick={() => setMenuOpen(false)}>Ideal para</a>
+            <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
+            <a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
+            <a
+              href="#contacto"
+              className="btn btn-primary header-nav-cta"
+              onClick={() => setMenuOpen(false)}
+            >
+              Hablemos
+            </a>
           </nav>
 
           <a href="#contacto" className="btn btn-primary header-cta">
             Hablemos
           </a>
+
+          <button
+            type="button"
+            className={`nav-toggle${menuOpen ? ' is-open' : ''}`}
+            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </header>
 

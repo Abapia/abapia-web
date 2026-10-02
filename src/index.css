@@ -162,6 +162,47 @@ h3 {
   min-width: 120px;
 }
 
+/* Botón hamburguesa: oculto en escritorio, visible en mobile */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 0 auto;
+  background: #d9e5f6;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* El "Hablemos" dentro del menú solo aparece en el desplegable mobile */
+.header-nav .header-nav-cta {
+  display: none;
+}
+
 /* HERO */
 
 .hero {
@@ -643,6 +684,53 @@ h3 {
 @media (max-width: 1100px) {
   .header-nav {
     display: none;
+  }
+
+  /* Mostrar la hamburguesa y ocultar el CTA suelto del header */
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  /* Nav desplegada como panel debajo del header */
+  .header-nav.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(5, 13, 26, 0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+    padding: 6px 0 12px;
+  }
+
+  .header-nav.is-open a {
+    padding: 14px 24px;
+    font-size: 16px;
+    opacity: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .header-nav.is-open a:first-child {
+    border-top: none;
+  }
+
+  .header-nav.is-open .header-nav-cta {
+    display: block;
+    width: auto;
+    box-sizing: border-box;
+    margin: 12px 24px 4px;
+    padding: 14px 20px;
+    text-align: center;
+    border-top: none;
   }
 
   .steps-grid {
