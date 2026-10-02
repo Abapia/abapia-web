@@ -256,7 +256,6 @@ function App() {
                     Un requerimiento puntual. Ideal para arrancar y conocer nuestra
                     forma de trabajo.
                   </p>
-                  <p className="pkg-note">Consultá por tu primer trabajo sin costo.</p>
                 </div>
                 <ul className="pkg-includes">
                   <li>Relevamiento breve</li>
@@ -614,14 +613,21 @@ function App() {
                   />
 
                   <div className="contact-side-mid">
-                    <p className="contact-side-tag">
-                      Desarrollo SAP ABAP, sin horas infladas.
-                    </p>
-                    <ul className="contact-checks">
-                      <li>Respondemos en 24 hs hábiles</li>
-                      <li>Relevamiento inicial sin cargo</li>
-                      <li>Validación humana experta</li>
-                    </ul>
+                    <p className="contact-side-tag">Cómo trabajamos con vos:</p>
+                    <div className="contact-rows">
+                      <div className="contact-feat">
+                        <span className="contact-feat-ic" aria-hidden="true">✓</span>
+                        <span>Firmamos NDA antes de ver tu código</span>
+                      </div>
+                      <div className="contact-feat">
+                        <span className="contact-feat-ic" aria-hidden="true">✓</span>
+                        <span>Trabajamos dentro de tu entorno SAP</span>
+                      </div>
+                      <div className="contact-feat">
+                        <span className="contact-feat-ic" aria-hidden="true">✓</span>
+                        <span>Hablás directo con quien desarrolla</span>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="contact-side-actions">

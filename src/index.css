@@ -55,7 +55,7 @@ h3 {
 }
 
 .section {
-  padding: 104px 0;
+  padding: 86px 0;
 }
 
 .section-alt {
@@ -1307,10 +1307,10 @@ h3 {
 .contact-side {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: flex-start;
+  gap: 18px;
   align-items: stretch;
-  padding: 34px;
+  padding: 28px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.022));
@@ -1419,15 +1419,38 @@ h3 {
 }
 
 .contact-side-logo {
-  width: 150px;
+  width: 178px;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: -6px auto 0;
 }
 
 .contact-side-mid {
   display: grid;
   gap: 14px;
+}
+
+.contact-rows {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-feat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #dbe5f3;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.contact-feat-ic {
+  color: #7dd3fc;
+  font-weight: 800;
 }
 
 .contact-side-actions {
