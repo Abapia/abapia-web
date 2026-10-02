@@ -187,7 +187,10 @@ function App() {
               <article className="card service-card service-card-featured">
                 <div className="service-card-body">
                   <h3>Desarrollo ABAP a medida</h3>
-                  <p>
+                  <p className="svc-lead">
+                    Cuando SAP estándar no alcanza y necesitás algo a medida.
+                  </p>
+                  <p className="svc-tech">
                     Reportes y ALV, interfaces (IDoc, RFC, webservices/REST/Proxy),
                     formularios (Smartforms, SAPscript, Adobe), programas Z, BAPIs,
                     BADIs, user exits y enhancements.
@@ -201,7 +204,10 @@ function App() {
               <article className="card service-card">
                 <div className="service-card-body">
                   <h3>Soporte y correctivo</h3>
-                  <p>
+                  <p className="svc-lead">
+                    Tickets, errores y jobs que te frenan la operación.
+                  </p>
+                  <p className="svc-tech">
                     Resolución de tickets, corrección de errores, jobs y ajustes
                     sobre desarrollos existentes.
                   </p>
@@ -214,7 +220,10 @@ function App() {
               <article className="card service-card">
                 <div className="service-card-body">
                   <h3>Mejoras evolutivas y performance</h3>
-                  <p>
+                  <p className="svc-lead">
+                    Procesos lentos o código difícil de mantener.
+                  </p>
+                  <p className="svc-tech">
                     Tuning, lecturas eficientes en memoria (ABAP for HANA) y
                     mejoras de mantenibilidad del código.
                   </p>
@@ -315,6 +324,36 @@ function App() {
           </div>
         </section>
 
+        <section className="section" id="oferta">
+          <div className="container">
+            <div className="offer-card">
+              <span className="eyebrow">Oferta de entrada</span>
+              <h2>Consultá por tu primer trabajo sin costo</h2>
+              <p className="offer-lead">
+                Probanos sin riesgo con un primer requerimiento acotado.
+              </p>
+              <div className="offer-steps">
+                <div className="offer-step">
+                  <span className="offer-num">1</span>
+                  <p>Elegís un requerimiento ABAP acotado.</p>
+                </div>
+                <div className="offer-step">
+                  <span className="offer-num">2</span>
+                  <p>Lo desarrollamos con IA y lo revisa un consultor senior.</p>
+                </div>
+                <div className="offer-step">
+                  <span className="offer-num">3</span>
+                  <p>Lo ves funcionando — sin cargo — y recién ahí decidís si seguimos.</p>
+                </div>
+              </div>
+              <div className="offer-cta">
+                <a href="#contacto" className="btn btn-primary">Consultá por el tuyo</a>
+              </div>
+              <p className="offer-cond">Sujeto a alcance acotado, a convenir.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="section section-divider" id="nosotros">
           <div className="container">
             <div className="about-box">
@@ -352,53 +391,35 @@ function App() {
           <div className="container">
             <div className="section-heading">
               <span className="eyebrow">Cómo trabajamos</span>
-              <h2>Un proceso simple, claro y eficiente</h2>
-              <p>Orden, velocidad y criterio técnico para avanzar sin vueltas.</p>
+              <h2>La IA acelera. El criterio senior decide.</h2>
+              <p>El senior define y revisa cada entrega; la IA acelera la ejecución.</p>
             </div>
 
             <div className="steps-grid">
               <article className="step-card">
                 <span className="step-number">01</span>
-                <h3>Relevamiento rápido</h3>
+                <h3>El senior dirige, la IA ejecuta</h3>
                 <p>
-                  Entendemos necesidad, alcance y contexto técnico para definir el
-                  mejor enfoque.
+                  Un consultor ABAP senior define el enfoque y revisa cada
+                  entrega. La IA acelera; nunca entra código sin revisión humana.
                 </p>
               </article>
 
               <article className="step-card">
                 <span className="step-number">02</span>
-                <h3>Estimación clara</h3>
+                <h3>Empezamos por el valor</h3>
                 <p>
-                  Bajamos el requerimiento a una propuesta concreta, realista y
-                  alineada a tiempos de entrega.
+                  Arrancamos por el resultado que necesitás: alcance claro y
+                  estimación antes de tocar una línea.
                 </p>
               </article>
 
               <article className="step-card">
                 <span className="step-number">03</span>
-                <h3>Desarrollo acelerado</h3>
+                <h3>Ingeniería para producción, no demos</h3>
                 <p>
-                  Usamos IA como acelerador del trabajo técnico donde aporta
-                  productividad real.
-                </p>
-              </article>
-
-              <article className="step-card">
-                <span className="step-number">04</span>
-                <h3>Validación experta</h3>
-                <p>
-                  Revisamos cada entrega con criterio técnico para asegurar
-                  calidad, mantenibilidad y consistencia.
-                </p>
-              </article>
-
-              <article className="step-card">
-                <span className="step-number">05</span>
-                <h3>Entrega y soporte</h3>
-                <p>
-                  Cerramos con seguimiento, ajustes y acompañamiento para que el
-                  resultado quede sólido.
+                  Código probado, mantenible y listo para tu entorno SAP. Nada de
+                  prototipos.
                 </p>
               </article>
             </div>
