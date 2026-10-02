@@ -227,20 +227,6 @@ function App() {
               </article>
             </div>
 
-            <div className="tech-chips">
-              <span>IDocs</span>
-              <span>RFC</span>
-              <span>BAPIs</span>
-              <span>BADIs</span>
-              <span>User exits</span>
-              <span>Enhancements</span>
-              <span>Smartforms</span>
-              <span>Adobe Forms</span>
-              <span>Webservices/REST</span>
-              <span>Open SQL</span>
-              <span>ABAP for HANA</span>
-              <span>Performance</span>
-            </div>
           </div>
         </section>
 
