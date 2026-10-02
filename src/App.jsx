@@ -244,6 +244,7 @@ function App() {
               <h2>Cómo trabajás con nosotros</h2>
               <p>
                 Elegí según el tipo de necesidad y el nivel de acompañamiento.
+                <br />
                 Sin estructura fija y sin ataduras.
               </p>
             </div>
@@ -390,7 +391,7 @@ function App() {
           <div className="container">
             <div className="section-heading">
               <span className="eyebrow">Cómo trabajamos</span>
-              <h2>La IA acelera. El criterio senior decide.</h2>
+              <h2>La IA acelera.<br />El criterio senior decide.</h2>
               <p>El senior define y revisa cada entrega; la IA acelera la ejecución.</p>
             </div>
 

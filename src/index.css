@@ -105,6 +105,12 @@ h3 {
   font-size: 18px;
   line-height: 1.75;
   color: #9fb0c9;
+  text-wrap: balance;
+}
+
+#ideal-para .section-heading,
+#faq .section-heading {
+  max-width: 980px;
 }
 
 /* HEADER */
@@ -1419,7 +1425,7 @@ h3 {
 }
 
 .contact-side-logo {
-  width: 178px;
+  width: 200px;
   height: auto;
   display: block;
   margin: -6px auto 0;
