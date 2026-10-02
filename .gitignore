@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Archivos locales que NO van al repo (basura detectada 01/10/2026)
+*.code-workspace
+index 1 .html
