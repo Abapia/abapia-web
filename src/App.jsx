@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { translations, LANGS } from './i18n'
 
 function App() {
   const [enviado, setEnviado] = useState(false)
@@ -6,6 +7,27 @@ function App() {
   const [error, setError] = useState(false)
   const [toastId, setToastId] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [lang, setLang] = useState(() => {
+    try {
+      const saved = localStorage.getItem('abapia_lang')
+      if (saved && translations[saved]) return saved
+    } catch {
+      /* noop */
+    }
+    return 'es'
+  })
+
+  const t = translations[lang]
+
+  // Persistimos el idioma elegido y actualizamos <html lang>.
+  useEffect(() => {
+    try {
+      localStorage.setItem('abapia_lang', lang)
+    } catch {
+      /* noop */
+    }
+    document.documentElement.lang = lang
+  }, [lang])
 
   // Al entrar directo con un hash en la URL (ej. abapia.com/#contacto desde LinkedIn),
   // esperamos a que la SPA renderice y recién ahí hacemos scroll a la sección.
@@ -45,6 +67,22 @@ function App() {
     }
   }
 
+  const LangSwitch = () => (
+    <div className="lang-switch" role="group" aria-label={t.aria.lang}>
+      {LANGS.map((l) => (
+        <button
+          key={l.code}
+          type="button"
+          className={`lang-btn${lang === l.code ? ' is-active' : ''}`}
+          onClick={() => setLang(l.code)}
+          aria-pressed={lang === l.code}
+        >
+          {l.label}
+        </button>
+      ))}
+    </div>
+  )
+
   return (
     <>
       <header className="site-header">
@@ -54,30 +92,32 @@ function App() {
           </a>
 
           <nav className={`header-nav${menuOpen ? ' is-open' : ''}`}>
-            <a href="#servicios" onClick={() => setMenuOpen(false)}>Servicios</a>
-            <a href="#modalidades" onClick={() => setMenuOpen(false)}>Modalidades</a>
-            <a href="#nosotros" onClick={() => setMenuOpen(false)}>Nosotros</a>
-            <a href="#metodo" onClick={() => setMenuOpen(false)}>Cómo trabajamos</a>
-            <a href="#ideal-para" onClick={() => setMenuOpen(false)}>Ideal para</a>
-            <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
-            <a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
+            <a href="#servicios" onClick={() => setMenuOpen(false)}>{t.nav.servicios}</a>
+            <a href="#modalidades" onClick={() => setMenuOpen(false)}>{t.nav.modalidades}</a>
+            <a href="#nosotros" onClick={() => setMenuOpen(false)}>{t.nav.nosotros}</a>
+            <a href="#metodo" onClick={() => setMenuOpen(false)}>{t.nav.metodo}</a>
+            <a href="#ideal-para" onClick={() => setMenuOpen(false)}>{t.nav.ideal}</a>
+            <a href="#faq" onClick={() => setMenuOpen(false)}>{t.nav.faq}</a>
+            <a href="#contacto" onClick={() => setMenuOpen(false)}>{t.nav.contacto}</a>
             <a
               href="#contacto"
               className="btn btn-primary header-nav-cta"
               onClick={() => setMenuOpen(false)}
             >
-              Hablemos
+              {t.nav.hablemos}
             </a>
           </nav>
 
+          <LangSwitch />
+
           <a href="#contacto" className="btn btn-primary header-cta">
-            Hablemos
+            {t.nav.hablemos}
           </a>
 
           <button
             type="button"
             className={`nav-toggle${menuOpen ? ' is-open' : ''}`}
-            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-label={menuOpen ? t.aria.closeMenu : t.aria.openMenu}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
           >
@@ -92,30 +132,23 @@ function App() {
         <section className="hero">
           <div className="container hero-center">
             <img src="/logo-abapia.png" alt="ABAPIA" className="hero-logo" />
-            <p className="hero-signature">La IA acelera. La experiencia decide.</p>
+            <p className="hero-signature">{t.tagline}</p>
 
-            <span className="hero-kicker">Desarrollo SAP ABAP</span>
+            <span className="hero-kicker">{t.hero.kicker}</span>
 
             <h1 className="hero-title">
-              <span className="hero-title-line">
-                Tus desarrollos, en una fracción del tiempo.
-              </span>
-              <span className="hero-title-q">
-                ¿Por qué seguís pagando las mismas horas?
-              </span>
+              <span className="hero-title-line">{t.hero.titleLine}</span>
+              <span className="hero-title-q">{t.hero.titleQ}</span>
             </h1>
 
-            <p className="hero-description">
-              Resolvemos tu backlog y tus requerimientos ABAP más rápido —y ese
-              ahorro es tuyo—, con la validación de un consultor senior.
-            </p>
+            <p className="hero-description">{t.hero.description}</p>
 
             <div className="hero-actions">
               <a href="#contacto" className="btn btn-primary">
-                Hablar con ABAPIA
+                {t.hero.ctaPrimary}
               </a>
               <a href="#modalidades" className="btn btn-secondary">
-                Ver modalidades
+                {t.hero.ctaSecondary}
               </a>
             </div>
 
@@ -125,18 +158,12 @@ function App() {
         <section className="trust-bar-section">
           <div className="container">
             <div className="trust-bar">
-              <div className="trust-item">
-                <span className="trust-value">Equipo senior</span>
-                <span className="trust-label">Experiencia senior en ABAP</span>
-              </div>
-              <div className="trust-item">
-                <span className="trust-value">Escalable</span>
-                <span className="trust-label">capacidad que crece con tu demanda</span>
-              </div>
-              <div className="trust-item">
-                <span className="trust-value">IA + humano</span>
-                <span className="trust-label">validación experta en cada entrega</span>
-              </div>
+              {t.trust.map((it, i) => (
+                <div className="trust-item" key={i}>
+                  <span className="trust-value">{it.value}</span>
+                  <span className="trust-label">{it.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -144,29 +171,19 @@ function App() {
         <section className="section" id="manifiesto">
           <div className="container">
             <div className="manifesto">
-              <span className="eyebrow">La eficiencia de la IA, de tu lado</span>
-              <h2>El modelo viejo se rompió. Nosotros ya trabajamos con el nuevo.</h2>
+              <span className="eyebrow">{t.manifesto.eyebrow}</span>
+              <h2>{t.manifesto.h2}</h2>
+              <p>{t.manifesto.p1}</p>
               <p>
-                La IA redujo drásticamente los tiempos de desarrollo en SAP. Casi
-                todos la usan… pero te siguen facturando como si nada hubiera
-                cambiado. Y pasa en toda la cadena: cuando una consultora terceriza
-                un desarrollo, muchas veces el ABAP acelera con IA y factura horas
-                de más — y ese sobrecosto termina en el cliente.
+                {t.manifesto.p2a}
+                <strong>{t.manifesto.p2strong}</strong>
+                {t.manifesto.p2b}
               </p>
-              <p>
-                En ABAPIA cortamos con eso. La IA nos hace más rápidos y ese ahorro
-                lo trasladamos: <strong>no inflamos horas, ni a una empresa ni a
-                una consultora.</strong> Entregás antes y pagás por el trabajo
-                real, con validación humana experta que garantiza la calidad.
-              </p>
-              <p>
-                La IA no reemplaza al programador senior: lo potencia. Te quedás
-                con la velocidad y con el criterio.
-              </p>
+              <p>{t.manifesto.p3}</p>
               <div className="manifesto-points">
-                <span>Entregás antes</span>
-                <span>Pagás lo real</span>
-                <span>Calidad garantizada por seniors</span>
+                {t.manifesto.points.map((p, i) => (
+                  <span key={i}>{p}</span>
+                ))}
               </div>
             </div>
           </div>
@@ -175,63 +192,27 @@ function App() {
         <section className="section section-divider" id="servicios">
           <div className="container">
             <div className="section-heading">
-              <span className="eyebrow">Servicios</span>
-              <h2>Qué resolvemos</h2>
-              <p>
-                Capacidad técnica ABAP para lo que tu equipo necesita destrabar,
-                con el alcance cerrado o ayudándote a definirlo.
-              </p>
+              <span className="eyebrow">{t.servicios.eyebrow}</span>
+              <h2>{t.servicios.h2}</h2>
+              <p>{t.servicios.p}</p>
             </div>
 
             <div className="cards-grid">
-              <article className="card service-card service-card-featured">
-                <div className="service-card-body">
-                  <h3>Desarrollo ABAP a medida</h3>
-                  <p className="svc-lead">
-                    Cuando SAP estándar no alcanza y necesitás algo a medida.
-                  </p>
-                  <p className="svc-tech">
-                    Reportes y ALV, interfaces (IDoc, RFC, webservices/REST/Proxy),
-                    formularios (Smartforms, SAPscript, Adobe), programas Z, BAPIs,
-                    BADIs, user exits y enhancements.
-                  </p>
-                </div>
-                <div className="service-card-footer">
-                  <div className="card-tag">Nuevos desarrollos</div>
-                </div>
-              </article>
-
-              <article className="card service-card">
-                <div className="service-card-body">
-                  <h3>Soporte y correctivo</h3>
-                  <p className="svc-lead">
-                    Tickets, errores y jobs que te frenan la operación.
-                  </p>
-                  <p className="svc-tech">
-                    Resolución de tickets, corrección de errores, jobs y ajustes
-                    sobre desarrollos existentes.
-                  </p>
-                </div>
-                <div className="service-card-footer">
-                  <div className="card-tag">Backlog y soporte</div>
-                </div>
-              </article>
-
-              <article className="card service-card">
-                <div className="service-card-body">
-                  <h3>Mejoras evolutivas y performance</h3>
-                  <p className="svc-lead">
-                    Procesos lentos o código difícil de mantener.
-                  </p>
-                  <p className="svc-tech">
-                    Tuning, lecturas eficientes en memoria (ABAP for HANA) y
-                    mejoras de mantenibilidad del código.
-                  </p>
-                </div>
-                <div className="service-card-footer">
-                  <div className="card-tag">Sobre lo que ya tenés</div>
-                </div>
-              </article>
+              {t.servicios.cards.map((c, i) => (
+                <article
+                  className={`card service-card${i === 0 ? ' service-card-featured' : ''}`}
+                  key={i}
+                >
+                  <div className="service-card-body">
+                    <h3>{c.h3}</h3>
+                    <p className="svc-lead">{c.lead}</p>
+                    <p className="svc-tech">{c.tech}</p>
+                  </div>
+                  <div className="service-card-footer">
+                    <div className="card-tag">{c.tag}</div>
+                  </div>
+                </article>
+              ))}
             </div>
 
           </div>
@@ -240,86 +221,47 @@ function App() {
         <section className="section section-alt" id="modalidades">
           <div className="container">
             <div className="section-heading">
-              <span className="eyebrow">Modalidades</span>
-              <h2>Cómo trabajás con nosotros</h2>
+              <span className="eyebrow">{t.modalidades.eyebrow}</span>
+              <h2>{t.modalidades.h2}</h2>
               <p>
-                Elegí según el tipo de necesidad y el nivel de acompañamiento.
+                {t.modalidades.pLine1}
                 <br />
-                Sin estructura fija y sin ataduras.
+                {t.modalidades.pLine2}
               </p>
             </div>
 
             <div className="cards-grid pkg-grid">
-              <article className="card pkg-card">
-                <div className="pkg-head">
-                  <h3>ABAPIA Sprint</h3>
-                  <p className="pkg-desc">
-                    Un requerimiento puntual. Ideal para arrancar y conocer nuestra
-                    forma de trabajo.
-                  </p>
-                </div>
-                <ul className="pkg-includes">
-                  <li>Relevamiento breve</li>
-                  <li>Alcance acotado</li>
-                  <li>Desarrollo o ajuste técnico</li>
-                  <li>Prueba básica</li>
-                  <li>Entrega para validación</li>
-                </ul>
-                <div className="pkg-foot">
-                  <div className="card-tag">Ideal para un primer trabajo</div>
-                  <a href="#contacto" className="btn btn-secondary pkg-cta">
-                    Hablemos de un Sprint
-                  </a>
-                </div>
-              </article>
-
-              <article className="card pkg-card pkg-card-featured">
-                <div className="pkg-badge">Recomendado</div>
-                <div className="pkg-head">
-                  <h3>ABAPIA Delivery</h3>
-                  <p className="pkg-desc">
-                    Ya tenés un desarrollo concreto para ejecutar y querés una
-                    entrega llave en mano.
-                  </p>
-                </div>
-                <ul className="pkg-includes">
-                  <li>Análisis técnico</li>
-                  <li>Estimación clara</li>
-                  <li>Desarrollo completo</li>
-                  <li>Pruebas técnicas</li>
-                  <li>Ajustes dentro del alcance</li>
-                  <li>Entrega lista para validar</li>
-                </ul>
-                <div className="pkg-foot">
-                  <div className="card-tag">Ideal para un proyecto definido</div>
-                  <a href="#contacto" className="btn btn-primary pkg-cta">
-                    Hablemos de un Delivery
-                  </a>
-                </div>
-              </article>
-
-              <article className="card pkg-card">
-                <div className="pkg-head">
-                  <h3>ABAPIA Partner</h3>
-                  <p className="pkg-desc">
-                    Una bolsa mensual de horas para acompañar tu backlog de forma
-                    continua.
-                  </p>
-                </div>
-                <ul className="pkg-includes">
-                  <li>Capacidad reservada por mes</li>
-                  <li>Backlog, tickets y mejoras</li>
-                  <li>Prioridades flexibles</li>
-                  <li>Previsibilidad de costos</li>
-                  <li>Sin incorporar estructura fija</li>
-                </ul>
-                <div className="pkg-foot">
-                  <div className="card-tag">Ideal para consultoras y equipos chicos</div>
-                  <a href="#contacto" className="btn btn-secondary pkg-cta">
-                    Hablemos de Partner
-                  </a>
-                </div>
-              </article>
+              {t.modalidades.packages.map((p, i) => {
+                const featured = i === 1
+                return (
+                  <article
+                    className={`card pkg-card${featured ? ' pkg-card-featured' : ''}`}
+                    key={i}
+                  >
+                    {featured && (
+                      <div className="pkg-badge">{t.modalidades.recommended}</div>
+                    )}
+                    <div className="pkg-head">
+                      <h3>{p.name}</h3>
+                      <p className="pkg-desc">{p.desc}</p>
+                    </div>
+                    <ul className="pkg-includes">
+                      {p.includes.map((it, j) => (
+                        <li key={j}>{it}</li>
+                      ))}
+                    </ul>
+                    <div className="pkg-foot">
+                      <div className="card-tag">{p.tag}</div>
+                      <a
+                        href="#contacto"
+                        className={`btn ${featured ? 'btn-primary' : 'btn-secondary'} pkg-cta`}
+                      >
+                        {p.cta}
+                      </a>
+                    </div>
+                  </article>
+                )
+              })}
             </div>
           </div>
         </section>
@@ -327,29 +269,21 @@ function App() {
         <section className="section" id="oferta">
           <div className="container">
             <div className="offer-card">
-              <span className="eyebrow">Oferta de entrada</span>
-              <h2>Consultá por tu primer trabajo sin costo</h2>
-              <p className="offer-lead">
-                Probanos sin riesgo con un primer requerimiento acotado.
-              </p>
+              <span className="eyebrow">{t.oferta.eyebrow}</span>
+              <h2>{t.oferta.h2}</h2>
+              <p className="offer-lead">{t.oferta.lead}</p>
               <div className="offer-steps">
-                <div className="offer-step">
-                  <span className="offer-num">1</span>
-                  <p>Elegís un requerimiento ABAP acotado.</p>
-                </div>
-                <div className="offer-step">
-                  <span className="offer-num">2</span>
-                  <p>Lo desarrollamos con IA y lo revisa un consultor senior.</p>
-                </div>
-                <div className="offer-step">
-                  <span className="offer-num">3</span>
-                  <p>Lo ves funcionando — sin cargo — y recién ahí decidís si seguimos.</p>
-                </div>
+                {t.oferta.steps.map((s, i) => (
+                  <div className="offer-step" key={i}>
+                    <span className="offer-num">{i + 1}</span>
+                    <p>{s}</p>
+                  </div>
+                ))}
               </div>
               <div className="offer-cta">
-                <a href="#contacto" className="btn btn-primary">Consultá por el tuyo</a>
+                <a href="#contacto" className="btn btn-primary">{t.oferta.cta}</a>
               </div>
-              <p className="offer-cond">Sujeto a alcance acotado, a convenir.</p>
+              <p className="offer-cond">{t.oferta.cond}</p>
             </div>
           </div>
         </section>
@@ -358,30 +292,15 @@ function App() {
           <div className="container">
             <div className="about-box">
               <div className="about-intro">
-                <span className="eyebrow">Nosotros</span>
-                <h2>Un equipo senior con experiencia real. IA aplicada con criterio.</h2>
+                <span className="eyebrow">{t.nosotros.eyebrow}</span>
+                <h2>{t.nosotros.h2}</h2>
               </div>
 
               <div className="about-content">
-                <p>La eficiencia también debería beneficiar al cliente.</p>
-
-                <p>
-                  Somos un equipo de capacidad escalable de consultores SAP senior,
-                  con experiencia real en proyectos ABAP. Conocemos de cerca
-                  cómo se estiman, ejecutan y entregan los desarrollos dentro del
-                  mundo de las consultoras.
-                </p>
-
-                <p>
-                  Usamos IA como acelerador técnico, siempre con validación humana
-                  experta. Esa mejora se traduce en estimaciones más razonables y
-                  precios más justos: no vendemos horas de más, resolvemos bien y
-                  construimos relaciones de largo plazo.
-                </p>
-
-                <div className="about-highlight">
-                  Más velocidad para ejecutar. Más claridad para el cliente.
-                </div>
+                <p>{t.nosotros.p1}</p>
+                <p>{t.nosotros.p2}</p>
+                <p>{t.nosotros.p3}</p>
+                <div className="about-highlight">{t.nosotros.highlight}</div>
               </div>
             </div>
           </div>
@@ -390,38 +309,23 @@ function App() {
         <section className="section section-alt" id="metodo">
           <div className="container">
             <div className="section-heading">
-              <span className="eyebrow">Cómo trabajamos</span>
-              <h2>La IA acelera.<br />El criterio senior decide.</h2>
-              <p>El senior define y revisa cada entrega; la IA acelera la ejecución.</p>
+              <span className="eyebrow">{t.metodo.eyebrow}</span>
+              <h2>
+                {t.metodo.h2Line1}
+                <br />
+                {t.metodo.h2Line2}
+              </h2>
+              <p>{t.metodo.p}</p>
             </div>
 
             <div className="steps-grid">
-              <article className="step-card">
-                <span className="step-number">01</span>
-                <h3>El senior dirige, la IA ejecuta</h3>
-                <p>
-                  Un consultor ABAP senior define el enfoque y revisa cada
-                  entrega. La IA acelera; nunca entra código sin revisión humana.
-                </p>
-              </article>
-
-              <article className="step-card">
-                <span className="step-number">02</span>
-                <h3>Empezamos por el valor</h3>
-                <p>
-                  Arrancamos por el resultado que necesitás: alcance claro y
-                  estimación antes de tocar una línea.
-                </p>
-              </article>
-
-              <article className="step-card">
-                <span className="step-number">03</span>
-                <h3>Ingeniería para producción, no demos</h3>
-                <p>
-                  Código probado, mantenible y listo para tu entorno SAP. Nada de
-                  prototipos.
-                </p>
-              </article>
+              {t.metodo.pillars.map((p, i) => (
+                <article className="step-card" key={i}>
+                  <span className="step-number">{String(i + 1).padStart(2, '0')}</span>
+                  <h3>{p.h3}</h3>
+                  <p>{p.p}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -429,38 +333,18 @@ function App() {
         <section className="section section-divider" id="ideal-para">
           <div className="container">
             <div className="section-heading">
-              <span className="eyebrow">Ideal para</span>
-              <h2>Quiénes pueden aprovechar ABAPIA</h2>
-              <p>
-                Un servicio pensado para organizaciones que necesitan capacidad
-                técnica ABAP con rapidez y criterio.
-              </p>
+              <span className="eyebrow">{t.ideal.eyebrow}</span>
+              <h2>{t.ideal.h2}</h2>
+              <p>{t.ideal.p}</p>
             </div>
 
             <div className="ideal-grid">
-              <article className="ideal-card">
-                <h3>Consultoras SAP</h3>
-                <p>
-                  Para tercerizar desarrollos, resolver picos de demanda o sumar
-                  apoyo técnico especializado.
-                </p>
-              </article>
-
-              <article className="ideal-card">
-                <h3>Empresas con backlog técnico</h3>
-                <p>
-                  Para avanzar tickets, mejoras y desarrollos que hoy están
-                  demorados o sin capacidad interna.
-                </p>
-              </article>
-
-              <article className="ideal-card">
-                <h3>Equipos internos chicos</h3>
-                <p>
-                  Para sumar refuerzo puntual o continuo sin necesidad de agrandar
-                  estructura fija.
-                </p>
-              </article>
+              {t.ideal.cards.map((c, i) => (
+                <article className="ideal-card" key={i}>
+                  <h3>{c.h3}</h3>
+                  <p>{c.p}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -468,85 +352,18 @@ function App() {
         <section className="section section-alt" id="faq">
           <div className="container">
             <div className="section-heading">
-              <span className="eyebrow">FAQ</span>
-              <h2>Preguntas frecuentes</h2>
-              <p>
-                Respuestas rápidas para entender cómo trabajamos y en qué casos
-                puede ayudarte ABAPIA.
-              </p>
+              <span className="eyebrow">{t.faq.eyebrow}</span>
+              <h2>{t.faq.h2}</h2>
+              <p>{t.faq.p}</p>
             </div>
 
             <div className="faq-list">
-              <article className="faq-item">
-                <h3>¿Qué tipo de desarrollos puede tomar ABAPIA?</h3>
-                <p>
-                  Desarrollos ABAP puntuales, ajustes sobre soluciones existentes,
-                  tickets técnicos, backlog y mejoras evolutivas.
-                </p>
-              </article>
-
-              <article className="faq-item">
-                <h3>¿Trabajan por requerimiento puntual o también de forma continua?</h3>
-                <p>
-                  Ambas. Podés trabajar con una necesidad puntual a través de Sprint
-                  o Delivery, o acompañarte de forma continua con la modalidad
-                  Partner.
-                </p>
-              </article>
-
-              <article className="faq-item">
-                <h3>¿Cómo es el arranque de un nuevo trabajo?</h3>
-                <p>
-                  Empezamos con un relevamiento breve para entender la necesidad, el
-                  alcance y el contexto técnico. A partir de eso definimos la mejor
-                  modalidad y el siguiente paso.
-                </p>
-              </article>
-
-              <article className="faq-item">
-                <h3>¿Es necesario tener el alcance completamente cerrado?</h3>
-                <p>
-                  No siempre. Si el requerimiento todavía necesita orden, te
-                  ayudamos a bajarlo a una propuesta más clara antes de avanzar con
-                  la ejecución.
-                </p>
-              </article>
-
-              <article className="faq-item">
-                <h3>¿Pueden trabajar como subcontratistas o bajo la marca del cliente?</h3>
-                <p>
-                  Sí. Con consultoras trabajamos como capacidad externa,
-                  integrándonos a tu delivery y, si hace falta, de forma
-                  transparente frente al cliente final.
-                </p>
-              </article>
-
-              <article className="faq-item">
-                <h3>¿Cómo manejan la confidencialidad y los accesos?</h3>
-                <p>
-                  Trabajamos con acuerdos de confidencialidad y accesos acotados a
-                  lo necesario, cuidando el código y los datos del cliente.
-                </p>
-              </article>
-
-              <article className="faq-item">
-                <h3>¿Cómo usan la IA con nuestro código?</h3>
-                <p>
-                  Usamos IA como acelerador técnico sobre tu código, en cuentas
-                  configuradas para que la información no se use para entrenar
-                  modelos, siempre con revisión de un ABAP senior antes de
-                  entregar. Si preferís, anonimizamos o trabajamos dentro de tu
-                  entorno. Lo acordamos por escrito antes de empezar.
-                </p>
-              </article>
-
-              <article className="faq-item">
-                <h3>¿Cómo cotizan un trabajo?</h3>
-                <p>
-                  Arrancamos con un relevamiento inicial sin cargo y te pasamos una
-                  estimación clara, con horas, supuestos y exclusiones.
-                </p>
-              </article>
+              {t.faq.items.map((it, i) => (
+                <article className="faq-item" key={i}>
+                  <h3>{it.q}</h3>
+                  <p>{it.a}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -554,14 +371,9 @@ function App() {
         <section className="section" id="contacto">
           <div className="container">
             <div className="section-heading">
-              <span className="eyebrow">Contacto</span>
-              <h2>Hablemos</h2>
-              <p>
-                ¿No sabés qué modalidad te sirve? Contanos tu caso y lo vemos
-                juntos. Desarrollos, soporte o backlog técnico: escribinos.
-                Respondemos en menos de 24 hs hábiles y el relevamiento inicial es
-                sin cargo.
-              </p>
+              <span className="eyebrow">{t.contacto.eyebrow}</span>
+              <h2>{t.contacto.h2}</h2>
+              <p>{t.contacto.p}</p>
             </div>
 
             <div className="contact-stack">
@@ -574,35 +386,32 @@ function App() {
                 >
                   <div className="form-row">
                     <label>
-                      Nombre
-                      <input type="text" name="nombre" required placeholder="Tu nombre" />
+                      {t.contacto.form.nombre}
+                      <input type="text" name="nombre" required placeholder={t.contacto.form.nombrePh} />
                     </label>
                     <label>
-                      Email
-                      <input type="email" name="email" required placeholder="tu@email.com" />
+                      {t.contacto.form.email}
+                      <input type="email" name="email" required placeholder={t.contacto.form.emailPh} />
                     </label>
                   </div>
                   <label>
-                    Empresa <span className="form-opt">(opcional)</span>
-                    <input type="text" name="empresa" placeholder="Nombre de tu empresa" />
+                    {t.contacto.form.empresa} <span className="form-opt">{t.contacto.form.opcional}</span>
+                    <input type="text" name="empresa" placeholder={t.contacto.form.empresaPh} />
                   </label>
                   <label>
-                    Contanos tu caso
+                    {t.contacto.form.caso}
                     <textarea
                       name="mensaje"
                       rows="4"
                       required
-                      placeholder="Qué necesitás resolver: backlog, tickets, un desarrollo puntual…"
+                      placeholder={t.contacto.form.casoPh}
                     ></textarea>
                   </label>
                   <button type="submit" className="btn btn-primary" disabled={enviando}>
-                    {enviando ? 'Enviando…' : 'Enviar consulta'}
+                    {enviando ? t.contacto.form.submitting : t.contacto.form.submit}
                   </button>
                   {error && (
-                    <p className="form-error">
-                      No se pudo enviar. Probá de nuevo o escribinos a
-                      contacto@abapia.com.
-                    </p>
+                    <p className="form-error">{t.contacto.form.error}</p>
                   )}
                 </form>
 
@@ -614,20 +423,14 @@ function App() {
                   />
 
                   <div className="contact-side-mid">
-                    <p className="contact-side-tag">Cómo trabajamos con vos:</p>
+                    <p className="contact-side-tag">{t.contacto.side.tag}</p>
                     <div className="contact-rows">
-                      <div className="contact-feat">
-                        <span className="contact-feat-ic" aria-hidden="true">✓</span>
-                        <span>Firmamos NDA antes de ver tu código</span>
-                      </div>
-                      <div className="contact-feat">
-                        <span className="contact-feat-ic" aria-hidden="true">✓</span>
-                        <span>Trabajamos dentro de tu entorno SAP</span>
-                      </div>
-                      <div className="contact-feat">
-                        <span className="contact-feat-ic" aria-hidden="true">✓</span>
-                        <span>Hablás directo con quien desarrolla</span>
-                      </div>
+                      {t.contacto.side.feats.map((f, i) => (
+                        <div className="contact-feat" key={i}>
+                          <span className="contact-feat-ic" aria-hidden="true">✓</span>
+                          <span>{f}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
@@ -663,24 +466,18 @@ function App() {
               </div>
 
               <div className="contact-secondary-heading">
-                <h3>¿Querés trabajar con nosotros?</h3>
-                <p>
-                  Si sos desarrollador ABAP y te interesa trabajar con foco en
-                  eficiencia, calidad técnica y uso inteligente de IA, mandanos tu CV.
-                </p>
+                <h3>{t.career.secHeading}</h3>
+                <p>{t.career.secP}</p>
               </div>
 
               <div className="career-box">
                 <div className="career-text">
-                  <h3>Envianos tu perfil</h3>
-                  <p>
-                    Buscamos perfiles técnicos con ganas de construir una forma más
-                    ágil, moderna y transparente de desarrollar en SAP.
-                  </p>
+                  <h3>{t.career.h3}</h3>
+                  <p>{t.career.p}</p>
                 </div>
 
                 <a href="mailto:cv@abapia.com" className="btn btn-primary btn-fixed">
-                  Envianos tu CV a cv@abapia.com
+                  {t.career.cta}
                 </a>
               </div>
             </div>
@@ -691,7 +488,7 @@ function App() {
       <footer className="site-footer">
         <div className="container footer-inner">
           <div className="footer-content">
-            <p>© 2026 ABAPIA. La IA acelera. La experiencia decide.</p>
+            <p>© 2026 ABAPIA. {t.tagline}</p>
 
             <a
               href="https://www.linkedin.com/company/abapia/"
@@ -712,7 +509,7 @@ function App() {
 
       {enviado && (
         <div key={toastId} className="toast" role="status" aria-live="polite">
-          ✓ ¡Gracias! Recibimos tu consulta.
+          {t.toast}
         </div>
       )}
     </>

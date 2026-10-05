@@ -130,7 +130,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
 }
 
 .header-logo {
@@ -147,7 +147,7 @@ h3 {
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
@@ -166,6 +166,41 @@ h3 {
 
 .header-cta {
   min-width: 120px;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  color: #9fb0c9;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 5px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: #f5f7fb;
+}
+
+.lang-btn.is-active {
+  background: rgba(125, 211, 252, 0.16);
+  color: #ffffff;
 }
 
 /* Botón hamburguesa: oculto en escritorio, visible en mobile */
