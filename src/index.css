@@ -109,7 +109,8 @@ h3 {
 }
 
 #ideal-para .section-heading,
-#faq .section-heading {
+#faq .section-heading,
+#modalidades .section-heading {
   max-width: 980px;
 }
 
@@ -1574,4 +1575,33 @@ h3 {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+
+/* Modalidades — sección simple (V21: sin paquetes con nombre) */
+.modal-simple {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.modal-lead {
+  margin: 0 0 18px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #eef3fb;
+}
+.modal-text {
+  margin: 0 0 26px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #c3cfe0;
+}
+.modal-nota {
+  margin: 0 0 26px;
+  color: #7dd3fc;
+  font-size: 16px;
+  font-weight: 600;
+}
+.modal-cta {
+  display: inline-flex;
 }

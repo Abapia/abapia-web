@@ -223,45 +223,15 @@ function App() {
             <div className="section-heading">
               <span className="eyebrow">{t.modalidades.eyebrow}</span>
               <h2>{t.modalidades.h2}</h2>
-              <p>
-                {t.modalidades.pLine1}
-                <br />
-                {t.modalidades.pLine2}
-              </p>
             </div>
 
-            <div className="cards-grid pkg-grid">
-              {t.modalidades.packages.map((p, i) => {
-                const featured = i === 1
-                return (
-                  <article
-                    className={`card pkg-card${featured ? ' pkg-card-featured' : ''}`}
-                    key={i}
-                  >
-                    {featured && (
-                      <div className="pkg-badge">{t.modalidades.recommended}</div>
-                    )}
-                    <div className="pkg-head">
-                      <h3>{p.name}</h3>
-                      <p className="pkg-desc">{p.desc}</p>
-                    </div>
-                    <ul className="pkg-includes">
-                      {p.includes.map((it, j) => (
-                        <li key={j}>{it}</li>
-                      ))}
-                    </ul>
-                    <div className="pkg-foot">
-                      <div className="card-tag">{p.tag}</div>
-                      <a
-                        href="#contacto"
-                        className={`btn ${featured ? 'btn-primary' : 'btn-secondary'} pkg-cta`}
-                      >
-                        {p.cta}
-                      </a>
-                    </div>
-                  </article>
-                )
-              })}
+            <div className="modal-simple">
+              <p className="modal-lead">{t.modalidades.lead}</p>
+              <p className="modal-text">{t.modalidades.p}</p>
+              <p className="modal-nota">{t.modalidades.nota}</p>
+              <a href="#contacto" className="btn btn-primary modal-cta">
+                {t.modalidades.cta}
+              </a>
             </div>
           </div>
         </section>
